@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px){
+
 
     *{
         padding: 0; margin: 0; outline: none;
@@ -646,4 +646,4 @@
         width: 100%; height: 20vw;
         background: #6b6d6f;
     }
-}
+
