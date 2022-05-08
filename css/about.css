@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'faemoot_reg';
+    src: url("../fonts/faemoot4s-webfont.woff");
+}    
+@font-face {
+    font-family: 'cicle';
+    src: url("../fonts/cicle_fina-webfont.woff");
+}
+    *{
+        padding: 0; margin: 0; outline: none;
+    --standardSpace: 4.33vw;
+
+    --mastHeadDark: linear-gradient(black 75%, red);
+    --mastHeadLight: linear-gradient(black 75%, yellow);
+    --mastHeadClone: linear-gradient(black 75%, #3d6cee);
+    --mastHeadNavy: linear-gradient(black 70%, #1d1dc0);
+    --mastHeadDusk: linear-gradient(black 80%,#f7984a);
+    --mastHeadBelle: linear-gradient(black 80%, rebeccapurple);       
+    }
+    
+    body::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }   
+/*The top section*/
+    body{
+        background: black;
+    }
+    .mastHead{
+        position: absolute;
+        width: 100vw;
+        height: 100px;
+        background: linear-gradient(black 75%, white);
+        z-index: -2;
+    }        
+    .surHead{
+        position: absolute;
+        top: 90px;
+        width: 100vw;
+        z-index: -10;
+        transition: 1.8s;
+        background: #000;
+        color: #fff;
+    }
+    .aboutHead{
+        font-family: faemoot_orn;
+        margin-left: 5vw;
+        margin-bottom: 10vw;
+        margin-top: 10vw;
+    }
+    #aboutBody{
+        font-family: faemoot_reg;
+        margin-left: 15vw;
+        font-size: 0.9rem;
+    }
+/*StyleTap*/
+    @font-face {
+        font-family: 'faemoot_orn';
+        src: url('../fonts/faemoot4o-webfont.woff');
+    }
+    /*theme change buttons===>*/
+    .themeButtons, .themeButtons2{
+        width: 68vw; height: calc(2.1rem*0.8);
+        transition: 0.5s;
+        opacity: 0;
+
+    }
+    .homeKey{
+        position: absolute;
+        right: 6vw; top: 135vw;
+        width: 3.5rem;
+        border-radius: 10%;
+        padding: calc(0.5rem*0.82) 0.5rem;
+        font-family: 'faemoot_orn';
+        font-size: calc(1rem*0.82); font-weight: bold;
+        background: rebeccapurple;
+        color: yellow;
+        transition: 1.3s;
+        opacity: 0;
+    }
+
+    .tailEndSecure{
+        position: absolute;
+        top: 70%; left: 1%;
+        width: 98%; height: calc(50*0.225rem);
+        z-index: 5;
+    }
+    .themeSwitchGrasp{
+        position: absolute;
+        width: 90%; height: calc(35*0.225rem);
+        top: 75%; left: calc(5*0.225rem);
+        z-index: 2;
+    }
+    .themeButtons, .themeButtons2{
+        position: absolute;
+        left: calc(5*0.225rem);
+        top: calc(140*0.225rem);
+        width: calc(72*0.225rem);
+        height: calc(20*0.225rem);
+        opacity: 0;
+        z-index: 3;
+        transition: 0.8s;
+    }
+    .themeButtons2{
+        position: absolute;
+        top: calc(148*0.225rem);
+        z-index: 4;
+    }
+    #styleTap, #lightTheme, #darkTheme, #dusk, #blue, #steel, #belle, #restoreUp, #restoreDown{
+        font-family: 'faemoot_orn';
+        font-size: 0.82rem; font-weight: bold;
+        padding: 0.4rem 0.5rem;
+        width: 25%;
+        margin-top: 0.4rem;
+        margin-right: 0.9rem;
+        z-index: inherit;
+    }
+    #lightTheme{
+        color:rgba(15, 20, 16);
+        background:#ffd900de;
+    }
+    #darkTheme{
+        color:rgba(255, 217, 0, 0.87);
+        background:#0f1410b2;
+    }
+    #styleTap:active, #lightTheme:active, #darkTheme:active, #dusk:active,#blue:active, #steel:active, #belle:active, #restoreBack:active{
+        transform: translateY(4px);
+    }
+    #blue{
+        background: blue;
+        color:white;
+    }
+    #steel{
+        background: steelblue;
+        color:white;
+    }
+    #belle{
+        background: #ff5470;
+        color:black;
+    }
+    #dusk{
+        background: #a82c1c;
+        color:white;
+    }
+    #styleTap{
+        background: rebeccapurple;
+        color: #d3d3d3;
+        width: 35%; height: calc(2.5rem*0.82);
+        border-bottom-right-radius: 2rem;
+        margin-left: calc(-50*0.225rem);
+        transition: 1.3s;
+        opacity: 0;
+    }
+    .styleTapWrap{
+        position: absolute; top: calc(133*0.225rem);
+        width: 98%; left:1%;
+        height: calc(26*.225rem);
+        z-index: 5;
+        transition: 0.8s;
+    }
+    #restoreUp, #restoreDown, #restoreBack{
+        position: absolute;
+        top: calc(123*0.225rem);
+        left: calc(79*0.225rem);
+        height:1.8rem; 
+        width: calc(15*0.225rem); 
+        font-size: 2.3rem; color: yellowgreen;
+        line-height: 0.6;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    #restoreUp{
+        top: calc(132.5*0.225rem);
+        color: slateblue;
+        background: yellowgreen;
+        z-index: 1;
+    }
+    #restoreDown{
+        top: calc(132.5*0.225rem);
+        line-height: 0.7;
+        background: slateblue;
+        z-index: 3;
+    }
+    #restoreBack{
+        top: calc(143*0.225rem);
+        font-size: calc(2rem*0.82);
+        line-height: 0.4;
+        background: red;
+        z-index: 3;
+    }
+    /* further button concerns*/
+    .choice, .default{
+        border-radius: 25px;
+    }
+    .choice, .default{
+        border-radius: 25px;
+    }
+    .reChoose{
+        border-radius: 0;
+    }
+    .default{
+        padding: 0.5rem;
+        display: none;
+    }
+    /*end of styleTap*/
+    /*Extra css for Credits Page*/
+    .creditsHead{
+        font-family: faemoot_orn;
+        margin-left: 5vw;
+        margin-bottom: 10vw;
+        margin-top: 10vw;
+    }
+    #creditsBody{
+        font-family: faemoot_reg;
+        margin-left: 15vw;
+        font-size: 0.9rem;
+    }
+    #creditsBody a{
+        color: #46dd00;
+    }
+    #creditsBody span{
+        margin-left: 49vw;
+    }
+    #creditsTail{
+        position: relative;
+        top: 70vw;
+        font-family: cicle;
+        font-style: italic;
+        font-size: 0.8rem;
+        text-align: right;
+    }
+    #creditsTail span{
+        font-style: normal;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+/* mods for various viewports*/
+
+@media only screen and (min-width: 360px) and (max-width: 369px) and (min-height: 780px) and (max-height: 790px){
+    .surHead{
+        transform: scale(0.9);
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 340px) and (min-height: 480px) and (max-height: 500px){
+body{
+    transform:scaleY(0.7) scaleX(0.8);
+}
+}
+@media only screen and (max-width: 504px) and (max-height: 504px){
+    body{
+        display: none;
+    }
+}
+@media only screen and (min-width: 383px) and (max-height: 645px){
+    body{
+        transform: scaleX(0.99) scaleY(0.95);
+    }
+    
+#restoreUp, #restoreDown, #restoreBack{
+        left: calc(85*0.225rem);
+    }
+}
+
+@media only screen and (min-width: 405px) and (max-height: 1080px){
+    body{
+        transform: scaleY(0.97);
+    }
+    #restoreUp, #restoreDown, #restoreBack{
+        left: calc(92.5*0.225rem);
+    }
+}
+
+@media only screen and (min-width: 396px) and (max-width: 450px) and (min-height: 595px) and (max-height: 604px){
+    #restoreUp, #restoreDown, #restoreBack{
+        left: calc(85*0.225rem);
+}
+}
+/*end of mods for various viewports*/

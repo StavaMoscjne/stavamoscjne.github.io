@@ -1,0 +1,332 @@
+@font-face {
+        font-family: faemoot_orn;
+        src: url('../fonts/faemoot4o-webfont.woff');
+}
+
+        body::-webkit-scrollbar, body::-moz-scrollbar
+        {
+                width:0; height:0;
+        }
+        *{
+                padding: 0; margin: 0; outline: none;
+                --surHeadDark: #000;
+                
+                --framingWidth: calc(70*0.225rem);
+                --framingHeight: calc(64.95*0.225rem);
+                --frameMargin: calc(12*0.225rem);
+                --standardSpace: calc(2*0.225rem);
+                
+                --overlapPane: #2e2201;
+                
+                --surHeadClone: linear-gradient(180deg, #0000009f, #00008b2f);
+                --surHeadBelle: #ffc0cb;
+                --surHeadDark: #000;
+                --surHeadLight: #f5f5f5;
+                --surHeadNavy: #00003a;
+                --surHeadMeadow: rgba(73, 0, 0, 0.466);
+                --one: #f5f5f5;
+                --two: #000;
+                --three: #808080;
+                --four: #5c0000;
+                
+                --aether: #4400ff;
+                --forest: #008000;
+                --illumin: #bebe4d;
+                --sea: #012146;
+                --donna: #99525e;
+        }
+
+.surHead{
+        position: absolute; top: 0;
+        width: 100%; height: 100vh;
+        background: var(--surHeadDark);
+        z-index: -6;
+        transition: 1.5s;
+}
+.surSt, .surDC{
+        position: absolute;
+        top: 0;
+        width: 100%; height: 100vh;
+        background: linear-gradient(180deg, #0000009f, #00008b2f);
+        z-index: -6;
+        opacity: 1;
+        transition: 1.5s;
+        }
+.surDC{
+        background: radial-gradient(circle,#f7984a, rgb(14, 32, 6));
+        }
+
+.sidebar{
+        position: fixed;
+        float: left;
+        clear: both;
+        top: 0; left: 0;
+        width: 0vw; height: 100vh;
+        background: #2b01017e;
+        background: #0000007e;
+        z-index: -1;
+        transition: 0.8s;
+}
+.sideContent{
+        position: absolute;
+        top: 15%;
+        width: 100.1%; height: 85%;
+        background: linear-gradient(#ffff0093,black);
+        border-top-right-radius: 5rem;
+}
+.sideContent a{
+        text-decoration: none;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        padding: 0.6rem 0.1rem;
+}
+
+.sideContent a:hover{
+        color: #ffe601;
+        transform: translateX(1rem);
+        transition: 0.7s;
+}
+.sideContentUl{
+        margin: 3rem 0 0 1.5rem;
+        display: none;
+        list-style: none;
+        
+}
+.sideContentUl li:nth-child(1){
+        margin-left: -1rem;
+        font-size: calc(1.5rem*0.82);
+        font-family: faemoot_orn;
+}
+.autresLi{
+        margin-bottom:-0.3rem;
+}
+.sideContentUl li:nth-child(6){
+        margin-bottom: 1rem;
+}
+#topicLi{
+        transition: 0.8s;
+}
+/*QuiClix Button concerns*/
+/* the transformable clicker*/
+.quiClixBox{
+        position: fixed;
+        top: calc(7.33vw*0.82); left: 70vw;
+        float: left;
+        width: 25vw; height: calc(2.5rem*0.82);
+        transition: 1s;
+        z-index: -1;
+        transform: rotateZ(90deg);
+        opacity: 0;
+}
+
+.quiClix{
+        position: relative;
+        float: right;
+        width: 80%; height: 100%;
+        border-radius: 2rem;
+        border: 2px solid;
+        color: white;
+        transition: 0.8s;
+        background: none;
+}    
+.quiClix:hover{
+        background: yellowgreen;
+}
+.Alt{
+        animation: floatDropAlt 2.1s ease-in 0s normal forwards; 
+}
+
+@keyframes floatDropAlt{
+        0%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: rotateZ(0);
+        }
+        57.14%{
+                top: 21.7vw;
+                opacity: 1;
+        }
+        61.42%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: rotateZ(-15deg) translateX(-0.3rem);
+        }
+        63.8%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: rotateZ(15deg) translateX(0.3rem);
+        }
+        70.95%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: rotateZ(-15deg) translateX(-0.3rem);
+        }
+        78.1%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: rotateZ(15deg) translateX(0.3rem);
+        }
+        80.95%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: rotateZ(0) translateX(0);
+                z-index: 1;
+        }
+        99.9%{
+                z-index:1;
+        }
+        100%{
+                top: 21.7vw;
+                opacity: 1;
+                transform: translateY(0);
+                transform: rotateZ(0) translateX(0);
+                z-index:7;
+        }
+}
+.theKnobA{
+        animation: stretchA 0.45s linear 0s 1 normal forwards;
+}
+.addLight{
+        border: solid 2px black;
+        color: black;
+}
+
+@keyframes stretchA{
+        0%{
+                width: 100%;
+                length: 100%;
+        }
+        25%{
+                margin-right: 0;
+        }
+        50%{
+                width: 200%;
+                margin-right: 0;
+                border-left-width: 0;
+        }
+        51%{
+                border-left-width: 15px;
+        }
+        99%{
+                background: none;
+        }
+        100%{
+                width: 80%;
+                height: 100%;
+                margin-right: 35vw;
+                transform: translateX(-5vw);
+                border: solid 5px white;
+                border-left-style:ridge;
+                border-left-width: 24px;
+                border-left-color: red;
+                background: yellow;
+                color: red;
+        }
+}
+
+.theKnobA:after, .theKnobC:before{
+        content: "\02df";
+        font-size: calc(2.5rem*0.82);
+        line-height: 1.2;
+        color: var(--themeBased, red);
+}
+
+.theKnobB:after, .theKnobD:before{
+        content: "\058e";
+        color: white;
+        font-size: calc(1.4rem*0.82);
+        color: var(--themeBased, white);
+}
+.theKnobB{
+        animation: stretchB 0.8s linear 0s 1 normal forwards;
+}
+
+@keyframes stretchB{
+        0%{
+                width: 80%;
+                height: 100%;
+                margin-right: 35vw;
+                border: solid 5px white;
+                border-left-style:ridge;
+                border-left-width: 24px;
+                border-left-color: red;
+                background: yellow;
+                color: black;
+        }
+        
+        50%{
+                width: 80%;
+                height: 100%;
+                margin-right: 75vw;
+                border: solid 5px white;
+                border-right-style:ridge;
+                border-right-width: 24px;
+                border-right-color: #9acd32;
+                background: white;
+                color: black;
+        }
+        100%{
+                width: 80%;
+                height: 100%;
+                margin-right: 75vw;
+                border: solid 5px white;
+                border-left-style:ridge;
+                border-left-width: 24px;
+                border-left-color: #9acd32;
+                background: #916a6a;
+                color: black;
+        }
+}
+
+.theKnobC{
+        animation: stretchC 0.8s linear 0s 1 normal forwards;
+}
+@keyframes stretchC{
+        0%{
+                width: 80%;
+                height: 100%;
+                margin-right: 75vw;
+                border: solid 5px white;
+                border-left-style:ridge;
+                border-left-width: 24px;
+                border-left-color: #9acd32;
+                background: #916a6a;
+        }
+        100%{
+                width: 80%;
+                height: 100%;
+                margin-right: 75vw;
+                border: solid 5px white;
+                border-right-style:ridge;
+                border-right-width: 24px;
+                border-right-color: red;
+                background: yellow;
+        }
+}
+
+.theKnobD{
+        animation: stretchD 0.8s linear 0s 1 normal forwards;
+}
+@keyframes stretchD{
+        0%{
+                width: 80%;
+                height: 100%;
+                margin-right: 75vw;
+                border: solid 5px white;
+                border-right-style:ridge;
+                border-right-width: 24px;
+                border-right-color: red;
+                background: yellow;
+        }
+        100%{
+                width: 80%;
+                height: 100%;
+                margin-right: 75vw;
+                border: solid 5px white;
+                border-left-style:ridge;
+                border-left-width: 24px;
+                border-left-color: #9acd32;
+                background: #916a6a;
+        }
+}
