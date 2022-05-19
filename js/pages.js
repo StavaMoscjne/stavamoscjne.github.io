@@ -42,6 +42,7 @@ var iota = document.getElementsByClassName('autresLi');
 var zeta = document.getElementById('premLi');
 var btn = document.getElementById('quiClix');
 var quicText = document.getElementById('it');
+var kree = document.getElementById('mainPg');
 
 side.classList.add('vraisVis');
 sideContent.style.transition='1s';
@@ -54,6 +55,11 @@ Bar=(c)=>{
         side.style.background=getComputedStyle(document.documentElement).getPropertyValue(c);
         return
         }
+bodyText=(c)=>{
+        kree.style.color=getComputedStyle(document.documentElement).getPropertyValue(c);
+        return
+    }
+
 quiTab=(e)=>{
         btn.style.color=getComputedStyle(document.documentElement).getPropertyValue(e);
         return 
@@ -77,6 +83,7 @@ dark =()=>{
     BarHead('--forest');
     BarPick('--one');
     quiTab('--three');
+    bodyText('--one');
 }
 
 light =()=>{
@@ -86,6 +93,7 @@ light =()=>{
     BarHead('--illumin');
     BarPick('--two');
     quiTab("--four");
+    bodyText('--two');
 }
 
 steel =()=>{
@@ -95,6 +103,7 @@ steel =()=>{
     BarHead('--aether');
     BarPick('--one');
     quiTab('--one');
+    bodyText('--illumin');
 }
 
 blue =()=>{
@@ -104,6 +113,7 @@ blue =()=>{
     BarHead('--sea');
     BarPick('--one');
     quiTab('--three');
+    bodyText('--illumin');
 }
 
 dusk =()=>{
@@ -113,6 +123,7 @@ dusk =()=>{
     BarHead('--four');
     BarPick('--one');
     quiTab('--forest');
+    bodyText('--three');
 }
 
 belle =()=>{
@@ -122,6 +133,7 @@ belle =()=>{
     BarHead('--two');
     BarPick('--donna');
     quiTab('--four');
+    bodyText('--four');
 }
 
 function prep(){
@@ -160,3 +172,37 @@ function prep(){
         }
     }
 }
+
+
+
+var cardDeck = document.getElementsByClassName('cardDeck')[0];
+var allCards = document.getElementsByClassName('ESCfeatures');
+var cardstack = document.getElementsByClassName('cardstack')[0];
+    
+    function enableEsc(){
+        for(var i=0; i < allCards.length; i++){
+            allCards[i].classList.add('vraisVis');
+            allCards[i].style.opacity='1';
+            allCards[i].style.transform="translateY(3rem)";
+        }
+    }
+    
+calico=(n)=>{
+    var hanged = document.getElementsByClassName('sway');
+    hanged[n].onclick =()=>{
+        for(var i=0; i < allCards.length; i++)
+        {
+        allCards[i].classList.add('vraisVis');
+        allCards[i].style.transform="translateY(4rem)";
+        }
+        popped=()=>{
+            allCards[n].style.transform='translateY(-6rem)';
+        }
+        setTimeout(popped,860);
+        }
+}
+bonnie=()=>{
+    for (var jack=0; jack<allCards.length; jack++){
+    calico(jack);
+    }}
+bonnie();
