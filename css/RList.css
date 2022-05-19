@@ -1,48 +1,70 @@
+@font-face{
+     font-family: faemoot_orn;
+     src: url('../fonts/faemoot4o-webfont.woff');
+}
+@font-face{
+     font-family: faemoot_reg;
+     src: url('../fonts/faemoot4s-webfont.woff');
+}
 @font-face {
-        font-family: faemoot_orn;
-        src: url('../fonts/faemoot4o-webfont.woff');
+     font-family: cicle_shadow;
+     src: url('../fonts/cicle_shadow-webfont.woff');
+}
+@font-face {
+     font-family: cicle_fina;
+     src: url('../fonts/cicle_fina-webfont.woff');
+}
+@font-face {
+     font-family: eraser;
+     src: url('../fonts/EraserRegular-webfont.woff');
 }
 
-        body::-webkit-scrollbar, body::-moz-scrollbar
-        {
-                width:0; height:0;
-        }
-        *{
-                padding: 0; margin: 0; outline: none;
-                --surHeadDark: #000;
-                
-                --framingWidth: calc(70*0.225rem);
-                --framingHeight: calc(64.95*0.225rem);
-                --frameMargin: calc(12*0.225rem);
-                --standardSpace: calc(2*0.225rem);
-                
-                --overlapPane: #2e2201;
-                
-                --surHeadClone: linear-gradient(180deg, #0000009f, #00008b2f);
-                --surHeadBelle: #ffc0cb;
-                --surHeadDark: #000;
-                --surHeadLight: #f5f5f5;
-                --surHeadNavy: #00003a;
-                --surHeadMeadow: rgba(73, 0, 0, 0.466);
-                --one: #f5f5f5;
-                --two: #000;
-                --three: #808080;
-                --four: #5c0000;
-                
-                --aether: #4400ff;
-                --forest: #008000;
-                --illumin: #bebe4d;
-                --sea: #012146;
-                --donna: #99525e;
-        }
-
+body::-webkit-scrollbar, body::-moz-scrollbar{
+     width:0; height:0;
+     }
+*{
+     padding: 0; margin: 0; outline: none;
+     --surHeadDark: #000;
+     
+     --framingWidth: calc(70*0.225rem);
+     --framingHeight: calc(64.95*0.225rem);
+     --frameMargin: calc(12*0.225rem);
+     --standardSpace: calc(2*0.225rem);
+     
+     --overlapPane: #2e2201;
+     
+     --surHeadClone: linear-gradient(180deg, #0000009f, #00008b2f);
+     --surHeadBelle: #ffc0cb;
+     --surHeadDark: #000;
+     --surHeadLight: #f5f5f5;
+     --surHeadNavy: #00003a;
+     --surHeadMeadow: rgba(73, 0, 0, 0.466);
+     --one: #f5f5f5;
+     --two: #000;
+     --three: #808080;
+     --four: #5c0000;
+     --five: orangered;
+     
+     --aether: #4400ff;
+     --forest: #008000;
+     --illumin: #bebe4d;
+     --sea: #012146;
+     --donna: #99525e;
+}
+#mainPg{
+        position: relative;
+        width: 22.5rem;
+        margin: auto;
+}
 .surHead{
         position: absolute; top: 0;
-        width: 100%; height: 100vh;
+        width: 100%; 
+        height: 100vh;
         background: var(--surHeadDark);
         z-index: -6;
         transition: 1.5s;
 }
+
 .surSt, .surDC{
         position: absolute;
         top: 0;
@@ -64,8 +86,9 @@
         width: 0vw; height: 100vh;
         background: #2b01017e;
         background: #0000007e;
-        z-index: -1;
+        z-index: 2;
         transition: 0.8s;
+        opacity: 0.8;
 }
 .sideContent{
         position: absolute;
@@ -73,6 +96,7 @@
         width: 100.1%; height: 85%;
         background: linear-gradient(#ffff0093,black);
         border-top-right-radius: 5rem;
+
 }
 .sideContent a{
         text-decoration: none;
@@ -100,6 +124,7 @@
 }
 .autresLi{
         margin-bottom:-0.3rem;
+
 }
 .sideContentUl li:nth-child(6){
         margin-bottom: 1rem;
@@ -111,19 +136,23 @@
 /* the transformable clicker*/
 .quiClixBox{
         position: fixed;
-        top: calc(7.33vw*0.82); left: 70vw;
+        left: 17.78rem;
         float: left;
         width: 25vw; height: calc(2.5rem*0.82);
         transition: 1s;
         z-index: -1;
         transform: rotateZ(90deg);
         opacity: 0;
+
 }
 
 .quiClix{
-        position: relative;
+        position: relative;/*enacts stch motion*/
+        position: absolute;
         float: right;
-        width: 80%; height: 100%;
+        top:0;
+        width: 80%; 
+        height: 100%;
         border-radius: 2rem;
         border: 2px solid;
         color: white;
@@ -139,36 +168,36 @@
 
 @keyframes floatDropAlt{
         0%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: rotateZ(0);
         }
         57.14%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
         }
         61.42%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: rotateZ(-15deg) translateX(-0.3rem);
         }
         63.8%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: rotateZ(15deg) translateX(0.3rem);
         }
         70.95%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: rotateZ(-15deg) translateX(-0.3rem);
         }
         78.1%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: rotateZ(15deg) translateX(0.3rem);
         }
         80.95%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: rotateZ(0) translateX(0);
                 z-index: 1;
@@ -177,7 +206,7 @@
                 z-index:1;
         }
         100%{
-                top: 21.7vw;
+                top: 2.1rem;
                 opacity: 1;
                 transform: translateY(0);
                 transform: rotateZ(0) translateX(0);
@@ -329,4 +358,257 @@
                 border-left-color: #9acd32;
                 background: #916a6a;
         }
+}
+/*end of sidebar concerns*/
+
+
+.headingBlock{
+        font-family: cicle_shadow;
+        font-size: 2.3rem;
+        margin-bottom: 1rem;
+}
+
+.realLife, .escapismGrasp{
+        position: relative;
+        height: 0.2rem;
+        width: 100%;
+
+        top: 1rem;
+}
+.escapismGrasp{
+        top: 13rem;
+        perspective: 12rem;
+}
+.RLS{
+        background: #c0c0c038;
+        border-radius: 5px;
+        position: absolute;
+}
+.caption{
+        position: absolute;
+        top: -1.1rem;
+        font-family: faemoot_orn;
+}
+.caption2{
+        position: relative;
+        top: 0;
+        left: 12rem;
+        width: 130px;
+        height: 60px;
+        padding-top: 10px;
+        transform-style: preserve-3d;
+        transform: rotateY(-25deg);
+        background: rgb(22, 22, 22);
+        color:white;
+        border: solid 5px rgb(112, 31, 31);
+        font-family: eraser;
+        font-size: 1rem;
+        text-indent: 1.1rem;
+}
+#rls{
+        left: 5px;
+        width: 180px;
+        height: 180px;
+        background: none;
+        background-image: url('../pics/top_drawer.png');
+        background-position-y: 40%;
+        background-repeat: no-repeat;
+        background-size: 70%;
+}
+#rls:hover{
+        cursor: pointer;
+}
+.rls_text{
+        width: 50px;
+        height: 50px;
+        position: relative;
+        left: 62%;
+        top: 50%;
+        font-size:1.2rem;
+        font-family: cicle_fina;
+        font-weight: bolder;
+}
+.rls_text a, .ntslf_text a, .foi_text a{
+        color: inherit;
+        text-decoration: none;
+}
+.ntslf_text a{
+        text-decoration: none;
+}
+
+#ntslf, #foi{
+        left: 190px;
+}
+#ntslf{
+        width: 50px;
+        height: 50px;
+}
+.ntslf_text{
+        width: 45px;
+        height: 45px;
+        position: relative;
+        left: 3.5rem;
+        font-size: 0.9rem;
+        font-family: faemoot_orn;
+}
+#foi{
+        width: 135px;
+        height: 3.5rem;
+        top: 3.5rem;
+}
+.foi_text{
+        position: relative;
+        top: 3.7rem;
+        left: 1.7rem;
+        font-family: cicle_fina;
+        font-weight: bold;
+        font-size: 0.9rem;
+}
+#breakLine{
+        position: absolute;
+        height: 0.1rem;
+        width: 6rem;
+        top: 15.5rem;
+        left: 8rem;
+        background: black;
+}
+.ESC, .ESCfeatures{
+        position: absolute;
+        width: 11rem;
+        height: 21rem;
+        background: #c0c0c038;
+        top: 1rem;
+        left: 0.5rem;
+        border-radius: 0.5rem;
+}
+.cardDeck{
+        position: relative;
+        width: 10rem;
+        height: 15rem;
+        top: 0rem;
+        left: 12rem;
+
+}
+.ESCfeatures{
+        width: 10rem;
+        height: 10rem;
+        left: 0;
+        opacity: 0;
+        color: white;
+}
+.ESCfeaturesText{
+        position: relative;
+        width: 8.5rem;
+        left: 0.75rem;
+        height: 3rem;
+        /* background: gray; */
+        top: 5.6rem;
+        font-size: 0.85rem;
+        line-height: 0.95;
+        letter-spacing: 0.025rem;
+        font-family: faemoot_reg;
+}
+.cardstack{
+        top: 3.9rem;
+        opacity: 0;
+        background: tomato;
+        height: 7rem;
+        z-index: 10;
+        transition: 0;
+        border-radius: 0;
+}
+.a{
+        background:rgb(0, 0, 0, 0.9);
+        top: 2.1rem;
+        transition: 0.9s;
+        z-index: 9;
+        /* transform: skewX(12deg); */
+}
+.b{
+        background:rgba(51, 51, 139, 0.8);
+        top: 1.8rem;
+        transition: 0.9s;
+        z-index: 8;
+}
+.c{
+        background:green;
+        background: linear-gradient(rgba(0, 128, 128, 0.98),rgb(144, 238, 144, 0.98));
+        top: 1.5rem;
+        transition: 0.5s;
+        z-index: 7;
+}
+.d{
+        background:rgba(59, 75, 45, 0.9);
+        top: 1.2rem;
+        transition: 0.4s;
+        z-index: 6;
+}
+.e{
+        background:yellow;
+        background: linear-gradient(rgb(154, 205, 50, 0.9), rgb(165, 42, 42, 0.9));
+        top: 0.9rem;
+        transition: 0.6s;
+        z-index: 5;
+}
+.f{
+        background: brown;
+        background:linear-gradient(rgb(0, 0, 0, 0.9), rgb(128, 128, 128, 0.9));
+        top: 0.6rem;
+        transition: 1s;
+        z-index: 4;
+}
+.g{
+        background: purple;
+        background: linear-gradient(rgba(128, 0, 128, 0.8),rgb(0, 128, 128, 0.98));
+        top: 0.3rem;
+        transition: 0.37s;
+        z-index: 3;
+}
+
+.escIN{
+        position: absolute;
+        height: 6.4rem;
+        width: 10rem;
+
+        top: 1.2rem;
+        left: 0.5rem;
+        border-radius: 2px;
+        font-family: faemoot_orn;
+        font-size: 0.8rem
+}
+.escIN ul{
+        list-style: none;
+}
+#escOne{
+        top: 0.4rem;
+}
+#escTwo{
+        top: 6.9rem;
+}
+#escThree{
+        top: 14rem;
+}
+.vraisVis{
+        opacity:1;
+}
+.escCont{
+        position: relative;
+        text-indent: 1rem;
+        font-family: 'cicle_fina';
+        margin-bottom: 0.2rem;
+        font-weight: bold;
+}
+.sway{
+        background: none;
+        border: none;
+        font-family: cicle_fina;
+        color: inherit;
+        font-weight: bold;
+}
+.sway:hover{
+        position: relative;
+        text-decoration: underline;
+        color: inherit;
+        transform: translateX(-0.5rem);
+        transition: 0.6s;
 }
