@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="./unsupported.css">
     <link rel="icon" href="./pics/theme.ico">
 </head>
+
 <body class='body'>
+<div class="accomodate">
+    <script src="./chk.js"></script>
     <div class="cape"></div>
     <div class="surDC"></div>
     <div class="surSt"></div>
@@ -45,6 +48,7 @@
         <button id="styleTap">StyleTap</button>
     </div>
     
+    <div class="accomodate2">
     <div class="themeSwitchGrasp"></div>
 
     <div class="themeButtons nullVis" id="themeButtons">
@@ -59,10 +63,10 @@
         <button id="belle" class="Qual">Bella</button>
     </div>
         
-    <button id="restoreUp">&#11188;</button>
+    <button id="restoreUp">&#10555;</button>
     <button id="restoreBack">&#10150;</button>
-    <button id="restoreDown">&#11190;</button>
-
+    <button id="restoreDown">&#8631;</button>
+    </div><!--accomod2-->
     
     <div class="sidebar" id="sidebar"> 
         <div class="sideContent"> 
@@ -130,11 +134,36 @@
     <button id="werey" class='werey'> 
         Next...
     </button>
-    
+</div> <!--accomodate-->
     <div class="unsupported"> 
         <div class="in_n"> </div>
-        <div id="notifier"> </div>
+        <div id="notifier"> <br><br> </div>
+        <br>
+        <div id="notifier2">
+            And you could check that
+            <a href="http://whatismyviewport.com">HERE</a>
+        </div>
     </div>
+
+    <noscript>
+        <div class="unsupportedJS">
+            <div id="enableJS"><br><br></div>
+        </div>
+        <style>
+        body{
+                background: green;
+            }
+        .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+                display: none;
+            }
+        .unsupportedJS{
+                display: block;
+            }
+        #notifier,#notifier2,.in_n{
+            display: none;
+        }
+        </style>
+    </noscript>
 
     <script src="./index.js"></script>
 </body>

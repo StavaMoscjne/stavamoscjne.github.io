@@ -1,12 +1,33 @@
-.unsupported{
+.unsupported, .unsupportedJS{
     position: absolute;
-    top: 20vw;
-    left: 1vw;
+    top: 0;
+    left: 0;
     display: none;
-    width: 98vw;
-    height: 100vw;
-    background: green;
+    width: 100vw;
 }
+.unsupportedJS{
+    background: green;
+    display: block;
+}
+#enableJS{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.05rem;
+    width: 80vw;
+    height: 6rem;
+}
+#enableJS:before{
+    font-family: 'faemoot_orn';
+    color: white;
+    content: "Sorry... some major features of TheMellowTheme website are not supported without javascript! :-(";
+}
+#enableJS:after{
+    font-family: 'faemoot_orn';
+    color: yellow;
+    content: 'Please enable javascript in your browser settings! :)';
+}
+
 
 .in_n {
     width: 6.2rem;
@@ -19,7 +40,7 @@
     animation: inNext 4s linear infinite;
 }
 
-#notifier{
+#notifier, #notifier2{
     position: absolute;
     top: 11rem;
     left: 2rem;
@@ -27,225 +48,197 @@
     width: 80vw;
     height: 6rem;
 }
+#notifier2{
+    top: 29.5rem;
+    font-family: 'faemoot_orn';
+    color: white;
+    display: none;
+}
+#notifier2 a{
+    color: yellow;
+}
+
+#notifier:before{
+    font-family: 'faemoot_orn';
+    color: white;
+    content: "Sorry... some major features of TheMellowTheme website are not supported on this device configuration :-(";
+}
 
 #notifier:after{
     font-family: 'faemoot_orn';
-    color: white;
-    content: 'the features of TheMellowTheme are not supported on this device configuration...';
+    color: yellow;
+    content:'If you are getting this message while using a computer, maximise your browser window and refresh the page... Possible fixes, if on mobile, include enabling desktop view, rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height. :-)';
 }
 
-@media only screen and (max-width: 359px) and (max-height: 639px){
-    
-    .unsupported{
-        display: block;
-    }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 639px) and (max-height: 359px){
+@media only screen and (max-width: 359px){
     body{
-        background: black;
+        background: green;
+    }
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
     }
     .unsupported{
         display: block;
     }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 359px) and (max-width: 400px) and (min-height: 479px) and (max-height: 600px){
-    
-    .unsupported{
+    #notifier2{
         display: block;
     }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
-    }
 }
 
-@media only screen and (max-width: 504px) and (max-height: 504px){
+
+@media only screen and (max-width: 349px) and (max-height: 639px){
     body{
-        background: black;
+        background: green;
     }
-    .unsupported{
-        display: block;
-    }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
         display: none;
     }
-}
-
-@media only screen and (max-width: 640px) and (max-height: 360px){
-    body{
-        background: black;
-    }
-    .unsupported{
-        display: block;
-    }
-    
-    #notifier:after{
-        font-family: 'faemoot_orn';
-        color: white;
-        content: '...Rotate your Device!';
-    }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
-    }
-}
-
-
-@media only screen and (max-width: 645px) and (max-height: 388px){
     .unsupported{
         display: block;
     }
     #notifier:after{
-        font-family: 'faemoot_orn';
-        color: white;
-        content: '...Rotate your Device!';
-    }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
+    content:'Possible fixes, if on mobile, include enabling desktop view, rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height :-)';
+}
+    #notifier2{
+        display: block;
     }
 }
 
-
-@media only screen and (min-width: 700px) and (max-height: 500px){
+@media only screen and (min-width: 640px) and (max-width: 999999px) and (min-height: 360px) and (max-height: 599px) {
+    body{
+        background: rebeccapurple;
+    }
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
+    }
     .unsupported{
         display: block;
     }
     #notifier:after{
-        font-family: 'faemoot_orn';
-        color: white;
-        content: '...Rotate your Device!';
+        content: 'Please Rotate Your Device';    
     }
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
+    #notifier:before{
+        content: "Sorry... some major features of TheMellowTheme website are not supported on this orientation :-(";
+    }
+    #notifier2{
+    top: 29.5rem;
+    display: none;
+}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 600px) and (min-height: 360px) and (max-height: 600px){
+    body{
+        background: palevioletred;
+    }
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
         display: none;
     }
-}
-
-@keyframes inNext {
-    0% {
-        transform: translate(0%, 0%) perspective(600px) rotateX(0deg) rotateY(0deg);
-    }
-    50% {
-        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(0deg);
-    }
-    100% {
-        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(-180deg);
-    }
-}
-
-@media only screen and (max-width: 359px) and (max-height: 1200px){
-    
-    .unsupported{
-        display: block;
-    }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
-    }
-}
-
-
-@media only screen and (min-width: 399px) and (max-width: 599px) and (min-height: 499px) and (max-height: 600px){
-    .unsupported{
-        display: block;
-    }
-    
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame,.smDiv,.smDivA,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
-    }
-}
-
-/* "special" resolution of 400x600 */
-
-@media only screen and (min-width: 396px) and (max-width: 450px) and (min-height: 595px) and (max-height: 604px){
     .unsupported{
         display: none;
     }
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame, .raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
+}
+
+/*accomondation for 550px*/
+@media only screen and (min-height: 500px) and (max-height: 549px) and (min-width: 360px){
+    body{
+        background: mediumaquamarine;
+    }
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
+    }
+    .unsupported{
         display: block;
     }
+}
 
-    .frame{
-        top: 20%;
-        transform: scale(0.8);
+/*accomodation for blackberry passport*/
+    @media only screen and (min-height: 500px) and (max-height: 510px) and (min-width: 500px) and (max-width: 510px){
+    body{
+        background: mediumaquamarine;
     }
-    .raiser,.raiser2{
-        right: -2%;
+    .cape,.surDC,.surSt,.surHead,.frame,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: block;
     }
-    #premLi{
-        font-size: 1.4rem;
+    .unsupported{
+        display: none;
+    }
+    .accomodate{
+        transform: translateY(-1rem);
+    }
+    .styleTapWrap{
+        position: fixed; top: calc(115*0.225rem);
+        width: 98%; left:1%;
+        height: calc(26*.225rem);
+        z-index: 5;
+        transition: 0.8s;
     }
     .descriptor{
-        top: 3%;
-        left: -7.7rem;
+        position: fixed;
+        top:1rem;
     }
-    #restoreUp, #restoreDown, #restoreBack{
-        left: calc(94*0.225rem);
+    .cape,.surDC,.surSt,.surHead,.sidebar{
+        height: 40rem;
+        min-height: 40rem;
     }
-    #sheen{
-        height: 650px;
-    }
-    .homeKey{
-        position: absolute;
-        right: 6vw; top: 105vw;
-        width: 3.5rem;
-        border-radius: 10%;
-        padding: calc(0.5rem*0.82) 0.5rem;
-        font-family: 'faemoot_orn';
-        font-size: calc(1rem*0.82); font-weight: bold;
-        background: rebeccapurple;
-        color: yellow;
-        transition: 1.3s;
-        opacity: 0;
+    .frame{
+        top: 7rem;
     }
 }
-@media only screen and (min-height: 396px) and (max-height: 454px) and (min-width: 595px) and (max-width: 604px){
+/*end of accomod2*/
+
+@media only screen and (min-width: 360px) and (max-height: 499px){
+    body{
+        background: rebeccapurple;
+    }
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
+    }
     .unsupported{
         display: block;
-    }
-    #notifier:after{
-        font-family: 'faemoot_orn';
-        color: white;
-        content: '...Rotate your Device!';
-    }
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame, .raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
-        display: none;
     }
 }
 
-@media only screen and (min-width: 639px){
+@media only screen and (min-width: 500px) and (max-width: 599px) and (max-height: 359px){
+    body{
+        background: palevioletred;
+    }
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
+    }
     .unsupported{
         display: block;
     }
     #notifier:after{
-        font-family: 'faemoot_orn';
-        color: white;
-        content: '...Rotate your Device!';
+    content:'Possible fixes, if on mobile, include enabling desktop view, rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height :-)';
+}
+    #notifier2{
+        display: block;
     }
-    #restoreUp,#restoreDown,#restoreBack,.surHead,.surDC,.surSt,.cape,.frame, .raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,#sheen,.bubble,.ballframe,.werey
-    {
+}
+
+/*piece de resistance*/
+
+@media only screen and (min-width: 545px) and (min-height: 600px){
+    body{
+        background: grey;
+    }
+    .mastHead,.cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
+    }
+    .unsupported{
+        display: block;
+    }
+}
+
+@media only screen and (min-height: 545px) and (min-width: 600px){
+    body{
+        background: grey;
+    }
+    .mastHead,.cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+        display: none;
+    }
+    .unsupported{
         display: none;
     }
 }
+/*auto redirect to desktop*/

@@ -392,6 +392,7 @@ belleTheme.addEventListener("click",belle);
 
 // the Clix button concerns
 function prep(){
+    descriptor.style.opacity="1";
     btn.classList.add('theKnobA');
     function openBar(){
         descriptorActive();
@@ -473,6 +474,8 @@ function prep(){
                     ballGirl.style.opacity=ballBoy.style.opacity='1';
                     const mood = document.createElement('p');
                     mood.innerHTML="It all depends on your mood, really...";
+                    mood.style.color='#fff';
+                    mood.style.fontSize='1.5rem';
                     ballBoy.appendChild(mood);
                     ballBoy.style.fontSize='1.2rem';
                     ballBoy.style.fontWeight='900';
@@ -600,7 +603,7 @@ function prep(){
                                     }
                                     setTimeout(gone,3180);
 /*six*/                                 mad.onclick=()=>{
-                                        slide1.style.transform='scale(5)';
+                                        slide1.style.transform='scale(7)';
                                         mad.style.display='none';
                                         ballGirl.style.zIndex='-99';
                                         noSass=()=>{

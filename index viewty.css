@@ -1,17 +1,18 @@
 body::-webkit-scrollbar, body::-moz-scrollbar{
         width:0; height:0;
+        min-height: 48rem;
     }
 *{
     padding: 0; margin: 0; outline: none;
-    --surHeadDark: #000;
 
+    --standardSpace: 0.45rem;
     --framingWidth: calc(70*0.225rem);
     --framingHeight: calc(64.95*0.225rem);
-    --frameMargin: calc(12*0.225rem);
-    --standardSpace: calc(2*0.225rem);
-
+    --higHeight: 11.98rem;
+    
     --overlapPane: #2e2201;
-
+    
+    --surHeadDark: #000;
     --surHeadClone: linear-gradient(180deg, #0000009f, #00008b2f);
     --surHeadBelle: #ffc0cb;
     --surHeadDark: #000;
@@ -29,30 +30,55 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     --sea: #012146;
     --donna: #99525e;
 }
-    .cape{
+
+.viewty{
+    position: absolute;
+    top: 0;
+    background: none;
+    width: 100%;
+    min-width: 75rem;
+}
+
+.capeVW{
+    position: absolute;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+}
+
+.surHeadVW{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0; right: 0;
+    background: var(--surHeadDark);
+    z-index: -6;
+    transition: 1.5s;
+}
+    /*this could decidedly present as unnecessary, but the lack of transition of the steel and dusk themes upon triggering; by virtue of said theme's backgrounds being linear gradients as opposed to block colours, jsut rbus my OCD teh worng wya.*/
+    .surStVW, .surDCVW{
         position: absolute;
-        top:0;
-        width: 100vw;
-        height: 100vh;
-        min-height: 40rem;
-        z-index: -999;
-    }
-    .surHead{
-        position: absolute; top: 0;
-        width: 100%; 
-        height: 100vh;
-        min-height: 40rem;
-        background: var(--surHeadDark);
+        top: 0;
+        width: 100%; height: 100vh;
+        background: linear-gradient(180deg, #0000009f, #00008b2f);
         z-index: -6;
+        opacity: 1;
         transition: 1.5s;
-    }
-    .frame{
-        position: absolute; top: 25%; 
-        left: var(--frameMargin);
-        width: var(--framingWidth); 
-        height: var(--framingHeight);
-        z-index: -6;
-    }
+        }
+    .surDCVW{
+        background: radial-gradient(circle,#f7984a, rgb(14, 32, 6));
+        }
+    /*End*/
+
+.frameVW{
+    position: relative; 
+    top: 30vh; 
+    margin: auto;
+    width: var(--framingWidth); 
+    height: var(--framingHeight);
+    z-index: -6;
+}
 
     .hig-3{
         position: absolute; top: 0;
@@ -129,9 +155,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     .hig-9an{
         animation: extend 6s ease 1.3s 1 normal forwards;
     }
-.unsupported{
-    display: none;
-}
+
 /*synchronizing of the panes*/
     @keyframes reduce {
         100% {            
@@ -350,6 +374,215 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
             animation: ease-in;
         }
     }
+
+.smDivVW{
+    position: relative;
+    top: calc(var(--framingHeight)+31vh); 
+    margin: auto; 
+    width: var(--framingWidth);
+    
+}
+.smDivA{
+        animation: shrink 1s ease 8.5s normal forwards;
+    }
+@keyframes shrink {
+        0%{
+            width: calc(70*0.225rem);
+        }
+        100%{
+            width: 0; opacity: 0;
+        }
+    }
+.raiserVW,.raiser2VW,.raiser3VW,.raiser4VW,.raiser5VW{
+    position: relative;
+    top: 14.88rem;
+    margin: auto;
+    width: 100%;
+    min-width: 1024px;
+    height: calc(var(--standardSpace)*2);
+    border-radius: 2%;
+    margin-bottom:0;
+    background: red;
+}
+.raiser2VW{
+    background: orangered;
+    top:21.6rem;
+}
+.raiser3VW, .raiser4VW, .raiser5VW{
+    position: absolute;
+    top: 13.41rem;
+}
+.raiser4VW{
+    top:14.9rem;
+}
+.raiser5VW{
+    background:pink;
+    top: 26.8rem;
+}
+
+
+.hig-a1,.hig-a2 {
+    position: relative;
+    top: 0;
+    margin-left: 30rem;
+    width: 22.5rem;
+    height: var(--higHeight);
+    background:#c0c0c038;
+    border-radius: 2%;
+    z-index: -2;
+}
+.hig-a2{
+    height: calc(var(--standardSpace)*10);
+}
+.act1{
+    animation: terminalCover 2s ease 9s normal forwards;
+}
+.act2{
+    animation: terminalCover2 2s ease 9.9s normal forwards;
+}
+@keyframes terminalCover {
+    100%{
+        top:0;
+        opacity:1;
+    }
+}
+@keyframes terminalCover2 {
+    100%{
+        top: 11.3rem;
+        opacity:1;
+    }
+}
+.act1a{
+    animation: terminalCover 2s ease 0s normal forwards;
+}
+.act2a{
+    animation: terminalCover2 2s ease 1s normal forwards;
+}
+    .in_next {
+        width: 6.2rem;
+        height: 6.2rem;
+        background: whitesmoke;
+        position: relative;
+        top: calc(2.5rem*0.82);
+        margin-left: 2rem;
+        border-radius: 25%;
+        animation: inNext 4s linear infinite;
+}
+@keyframes inNext {
+    0% {
+        transform: translate(0%, 0%) perspective(600px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+
+@font-face {
+    font-family: faemoot_orn;
+    src: url('./fonts/faemoot4o-webfont.woff');
+}
+
+#titleCard{
+    font-family: 'faemoot_orn';
+    font-size: 2rem;
+    width: 55%;
+    height: 50%;
+    position: relative;
+    left: calc(var(--standardSpace)*-2);
+    top: -4rem;
+    float: right;
+}
+#visitor, #veteran{
+    margin-left: calc(10*0.225rem);
+    margin-top: calc(2*0.225rem);
+    transition: 1s;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    width: 40%; 
+    height: 2.9rem;
+    border-radius: 1rem;
+    background: none;
+    padding: 0.82px;
+    z-index: -2;
+
+}
+#veteran{
+    margin-left: 0;
+}
+
+
+.themePanel{
+    position: relative;
+    top: 0;
+    margin-left: 11.2rem;
+    width: 20.75rem;
+
+    height: 14.4rem;
+    /* background: goldenrod; */
+    background:#c0c0c038;
+    transform: scale(0.8);
+    opacity: 0;
+    border-radius: 5px;
+    display: none;
+    opacity: 1;
+    display: block;
+}
+.foldMenu, .foldMenuScale{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: red;
+    border-radius: 50%;
+    z-index: 12;
+}
+.foldMenu{
+    bottom: calc(1.5rem*0.8);
+    left: calc(1.5rem*0.8);
+    width: calc(2.2rem*0.8);
+    height: calc(2.2rem*0.8);
+}
+.foldMenu:hover, .foldMenuScale:hover, #styleTapVW:hover, #restoreBackVW:hover, #restoreUpVW:hover, #restoreDownVW:hover{
+    cursor: pointer;
+}
+.foldMenu:active, .foldMenuScale:active{
+    transform:translateY(4px);
+}
+
+/* further button concerns*/
+.choice, .default{
+    border-radius: 25px;
+}
+.menuPanel{
+    position: absolute;
+    top: 22rem;
+    left: 54.05rem;
+    width: 10rem;
+    height: 18.2rem;
+    background: #c0c0c038;
+    border-radius: 3%;
+    opacity: 0;
+    display: none;
+}
+.resetsPanel{
+    position: relative;
+    top: 0;
+    left: 14.7rem;
+    left: 30rem;
+    left: 17.4rem;
+
+    width: 12.5rem;
+    height: 6.5rem;
+    background: #c0c0c038;
+    border-radius: 3%;
+    /* opacity: 0;
+    display: none; */
+}
+
 /*definitions*/
     .playRun{
         display: none;
@@ -360,270 +593,234 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     .vraisVis{
         opacity: 0.8;
     }
-/* MidSection*/
-    .smDiv{
-        position: absolute;
-        top: calc(var(--standardSpace)*55); 
-        left: var(--frameMargin); 
-        width: var(--framingWidth);
-        
-    }
-.smDivA{
-        animation: shrink 1s ease 8.5s normal forwards;
-    }
-@keyframes shrink {
-        0%{
-            width: calc(70*0.225rem);
-        }
-        100%{
-            left: calc(50*0.225rem); width: 0; opacity: 0;
-        }
-    }
-
 /*terminatingSection*/
-    .raiser,.raiser2{
+
+/*styling functionality desc*/
+#styleVista, #menuVista, #resetsVista{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 0;
+    left: 27rem;
+    background:#c0c0c038;
+    border-radius: 25%;
+    font-family: 'faemoot_orn';
+}
+#menuVista{
+    top: 4.27rem;
+}
+#resetsVista{
+    top: 8.48rem;
+}
+
+.bigshot:hover{
+    box-shadow: 10px 6px 3px #ff9900;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: translateY(-4px);
+}
+.bigshot:active{
+    transform: translateY(4px);
+    box-shadow: 3px 4px 3px rgb(255, 153, 0);
+}
+
+#resetsVista:hover{
+    box-shadow: 10px 6px 3px #ff0000;
+}
+
+/*reset generation*/
+.TBB{
         position: absolute;
-        top: calc(var(--standardSpace)*56);
-        left: 1%;
-        width: 98%; height: calc(var(--standardSpace)*2);
-        border-radius: 2%;
-        z-index: -3;
+        font-size: 0.6rem;
+        border-radius: 50%;
+        border-style: outset;
+        width: 3rem;
+        height: 3rem;
+        top: 0.5rem;
+    }
+    .TBB:active{
+        border-style: groove;
+    }
+    #TBRB{
+        color: yellow;
+        background: #ff1515;
+        right: 0.5rem;
+    }
+    #TBGB{
+        color: #fff;
+        background: green;
+        right: 4rem;
+    }
+    #TBYB{
+        display: none;
     }
 
-    .raiser2{
-        top: calc(var(--standardSpace)*60.4);
-    }
-    .act1{
-        animation: terminalCover 2s ease 9s normal forwards;
-    }
-    .act2{
-        animation: terminalCover2 2s ease 9.9s normal forwards;
-    }
-    .act1a{
-        animation: terminalCover 2s ease 0s normal forwards;
-    }
-    .act2a{
-        animation: terminalCover2 2s ease 1s normal forwards;
-    }
-    .hig-a1,.hig-a2 {
-        position: absolute;
-        top: 0; left: 0;
-            width: calc(98*0.225rem);
-            height: calc(var(--framingHeight)*0.82);
-            background:#c0c0c038;
-            border-radius: 2%;
-            z-index: -2;
-        }
 
-    .hig-a2{
-        height: calc(var(--standardSpace)*10);
-    }
-    @keyframes terminalCover {
-        100%{
-            transform: translateY(calc(var(--framingWidth)*-1));
-            opacity:1;
-        }
-    }
-    @keyframes terminalCover2 {
-        100%{
-            transform: translateY(calc(var(--framingWidth)*-0.35));
-            opacity:1;
-        }
-    }
 
-    .in_next {
-        width: 6.2rem;
-        height: 6.2rem;
-        background: whitesmoke;
-        position: relative;
-        top: calc(2.5rem*0.82);
-        margin-left: 2rem;
-        border-radius: 25%;
-        animation: inNext 4s linear infinite;
-    }
-    @keyframes inNext {
-    0% {
-        transform: translate(0%, 0%) perspective(600px) rotateX(0deg) rotateY(0deg);
-    }
-    50% {
-        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(0deg);
-    }
-    100% {
-        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(-180deg);
-    }
-    }
-    @font-face {
-        font-family: faemoot_orn;
-        src: url('./fonts/faemoot4o-webfont.woff');
-    }
-    #titleCard{
-        background: none;
-        font-family: 'faemoot_orn';
-        font-size: 2rem;
-        width: 55%;
-        height: 50%;
-        position: relative;
-        left: calc(var(--standardSpace)*-2);
-        top: calc(var(--frameMargin)*-1.2);
-        float: right;
-    }
-    #visitor, #veteran{
-        margin-left: calc(10*0.225rem);
-        margin-top: calc(2*0.225rem);
-        transition: 1s;
-        font-size: 0.75rem;
-        box-sizing: border-box;
-        width: 40%; height: 2.9rem;
-        border-radius: 1rem;
-        background: none;
-        padding: 0.82px;
-        z-index: -2;
 
-    }
-    #veteran{
-        margin-left: 0;
-    }
-    .tailEndSecure{
-        position: absolute;
-        top: 70%; left: 1%;
-        width: 98%; height: calc(50*0.225rem);
-        z-index: 5;
-    }
-    .themeSwitchGrasp{
-        position: absolute;
-        width: 90%; height: calc(35*0.225rem);
-        top: 75%; left: calc(5*0.225rem);
-        z-index: 2;
-    }
-    .themeButtons, .themeButtons2{
-        position: absolute;
-        left: calc(5*0.225rem);
-        top: calc(140*0.225rem);
-        width: calc(72*0.225rem);
-        height: calc(20*0.225rem);
-        opacity: 0;
-        z-index: 3;
-        transition: 0.8s;
-    }
-    .themeButtons2{
-        position: absolute;
-        top: calc(148*0.225rem);
-        z-index: 4;
-    }
-    #styleTap, #lightTheme, #darkTheme, #dusk, #blue, #steel, #belle, #restoreUp, #restoreDown{
-        font-family: 'faemoot_orn';
-        font-size: 0.82rem; font-weight: bold;
-        padding: 0.4rem 0.5rem;
-        width: 25%;
-        margin-top: 0.4rem;
-        margin-right: 0.9rem;
-        z-index: inherit;
-    }
-    #lightTheme{
-        color:#0f1410;
-        background:#ffd900de;
-    }
-    #darkTheme{
-        color:#ffd900de;
-        background:#0f1410b2;
-    }
-    #styleTap:active, #lightTheme:active, #darkTheme:active, #dusk:active,#blue:active, #steel:active, #belle:active, #restoreBack:active{
-        transform: translateY(4px);
-    }
-    #blue{
-        background: blue;
-        color:white;
-    }
-    #steel{
-        background: steelblue;
-        color:white;
-    }
-    #belle{
-        background: #ff5470;
-        color:black;
-    }
-    #dusk{
-        background: #a82c1c;
-        color:white;
-    }
-    #styleTap{
-        background: rebeccapurple;
-        color: #d3d3d3;
-        width: 35%; height: calc(2.5rem*0.82);
-        border-bottom-right-radius: 2rem;
-        margin-left: calc(-50*0.225rem);
-        transition: 1.3s;
-        opacity: 0;
-    }
-    .styleTapWrap{
-        position: fixed; top: calc(133*0.225rem);
-        width: 98%; left:1%;
-        height: calc(26*.225rem);
-        z-index: 5;
-        transition: 0.8s;
-    }
-    #restoreUp, #restoreDown, #restoreBack{
-        position: absolute;
-        top: calc(123*0.225rem);
-        left: calc(79*0.225rem);
-        height:1.8rem; 
-        width: calc(15*0.225rem); 
-        font-size: 2rem; color: yellowgreen;
-        line-height: 0.7;
-        opacity: 0;
-        transition: 0.5s;
-    }
 
-    #restoreUp{
-        top: calc(132.5*0.225rem);
-        color: slateblue;
-        background: yellowgreen;
-        z-index: 1;
-    }
-    #restoreDown{
-        top: calc(132.5*0.225rem);
-        line-height: 0.8;
-        background: slateblue;
-        z-index: 3;
 
-    }
-    #restoreBack{
-        top: calc(143*0.225rem);
-        font-size: calc(2rem*0.82);
-        line-height: 0.4;
-        background: red;
-        z-index: 3;
-    }
-    /* further button concerns*/
-    .choice, .default{
-        border-radius: 25px;
-    }
-    /*this could decidedly present as unnecessary, but the lack of transition of the steel and dusk themes upon triggering; by virtue of said theme's backgrounds being linear gradients as opposed to block colours, jsut rbus my OCD teh worng wya.*/
-    .surSt, .surDC{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        min-height: 40rem;
-        background: linear-gradient(180deg, #0000009f, #00008b2f);
-        z-index: -6;
-        opacity: 1;
-        transition: 1.5s;
-        }
-    .surDC{
-        background: radial-gradient(circle,#f7984a, rgb(14, 32, 6));
-        }
-    /*End of the main body section*/
 
-    /*The Sidebar*/
+
+/*the theme concerns*/
+.Qual:hover{
+    cursor: pointer;
+}
+/*The theme switchboard setup*/
+.tailEndSecureVW{
+    position: absolute;
+    height: calc(50*0.225rem);
+    z-index: 5;
+}
+
+.themeSwitchGraspVW{
+    position: absolute;
+    height: calc(35*0.225rem);
+    z-index: 2;
+}
+
+.themeButtonsVW, .themeButtons2VW{
+    position: absolute;
+    width: calc(72*0.225rem);
+    height: calc(20*0.225rem);
+    opacity: 0;
+    z-index: 3;
+    transition: 0.8s;
+    left: 0.5rem;
+}
+
+.themeButtons2VW{
+    position: absolute;
+    z-index: 4;
+}
+
+#styleTapVW, #lightThemeVW, #darkThemeVW, #duskVW, #blueVW, #steelVW, #belleVW, #restoreUpVW, #restoreDownVW {
+    font-family: 'faemoot_orn';
+    font-size: 0.82rem; font-weight: bold;
+    padding: 0.4rem 0.5rem;
+    width: 25%;
+    margin-top: 0.4rem;
+    margin-right: 0.9rem;
+    z-index: inherit;
+}
+#lightThemeVW{
+    color:#0f1410;
+    background:#ffd900de;
+}
+#darkThemeVW{
+    color:#ffd900de;
+    background:#0f1410b2;
+}
+#styleTapVW:active, #lightThemeVW:active, #darkThemeVW:active, #duskVW:active,#blueVW:active, #steelVW:active, #belleVW:active, #restoreBackVW:active{
+    transform: translateY(4px);
+}
+#blueVW{
+    background: blue;
+    color:white;
+}
+#steelVW{
+    background: steelblue;
+    color:white;
+}
+#belleVW{
+    background: #ff5470;
+    color:black;
+}
+#duskVW{
+    background: #a82c1c;
+    color:white;
+}
+#styleTapVW{
+    background: rebeccapurple;
+    color: #d3d3d3;
+    width: 35%; 
+    height: calc(2.5rem*0.82);
+    border-bottom-right-radius: 2rem;
+    margin-left: 0;
+    transition: 1.3s;
+    opacity: 1;
+}
+.styleTapWrapVW{
+    position: absolute;
+    height: calc(26*.225rem);
+    z-index: 5;
+    transition: 0.8s;
+
+}
+.da{
+    position:absolute;
+    right:0;
+    top: 2.325rem;
+    width: calc(15*0.225rem); 
+    height: 3.7rem;
+}
+#restoreUpVW, #restoreDownVW, #restoreBackVW{
+    position: relative;
+    height:1.8rem; 
+    width: calc(15*0.225rem); 
+    font-size: 2.3rem; 
+    color: yellowgreen;
+    line-height: 0.6;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#restoreUpVW{
+    color: slateblue;
+    background: yellowgreen;
+    z-index: 1;
+}
+#restoreDownVW{
+    line-height: 0.7;
+    background: slateblue;
+    z-index: 3;
+}
+#restoreBackVW{
+    font-size: calc(2rem*0.82);
+    line-height: 0.4;
+    background: red;
+    z-index: 3;
+}
+#restoreUpVW, #restoreDownVW, #restoreBackVW{
+    position:absolute;
+    left: 0;
+    margin: 0;
+    top:0;
+}
+#restoreBackVW{
+    top: 2rem;
+}
+.themeButtonsVW{
+    top: 4.032rem;
+}
+.themeButtons2VW{
+    top: 5.712rem;
+}
+.styleTapWrapVW, .tailEndSecureVW, .themeSwitchGraspVW{
+    width: 20.75rem;
+}
+.tailEndSecureVW{
+    top: 0.5rem;
+}
+.themeSwitchGraspVW{
+    top: 5%;
+    top: 1.68rem;
+}
+.styleTapWrapVW{
+    top: 7%;
+    top: 2.352rem;
+}
+/*end of theme concerns*/
+
+
+
+/*The Sidebar*/
     .sidebar{
         position: fixed;
         float: left;
         clear: both;
         top: 0; left: 0;
-        width: 0vw;
-        height: 100vh;
-        min-height: 40rem;
+        width: 0vw; height: 100vh;
         background: #2b01017e;
         background: #0000007e;
         z-index: -1;
@@ -715,28 +912,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         padding-bottom: 5px;
         padding-right: 9px; letter-spacing: 0.7px;
     }
-    .TBB{
-        font-size: 0.6rem;
-        height: 2rem;
-        border-radius: 50%;
-        width: 2.3rem;
-        border-style: outset;
-    }
-    .TBB:active{
-        border-style: groove;
-    }
-    #TBRB{
-        color: yellow;
-        background: #ff1515;
-        margin-bottom: 5px;
-    }
-    #TBGB{
-        color: #fff;
-        background: green;
-    }
-    #TBYB{
-        display: none;
-    }
+    
     .sidebell{
         position: absolute;
         top: 2rem;
@@ -1105,7 +1281,6 @@ animation: dialog 0.6s ease 0s 1 forwards normal;
     top: 0;
     width: 100vw; 
     height: 100vh;
-    min-height: 40rem;
     background: rgb(255, 153, 0);
     z-index:-11;
     opacity: 0;
@@ -1548,86 +1723,75 @@ animation: dialog 0.6s ease 0s 1 forwards normal;
     opacity: 0;
 }
 
-/*aesthetics forvaried viewports*/
-@media only screen and (min-width: 364px){
-    .hig-a1,.hig-a2 {
-        width: 93vw;
-        left: 1.5vw;
+
+/*resolution and javascript issues*/
+
+.unsupported, .unsupportedJS{
+    position: absolute;
+    background: green;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+@media only screen and (max-height:639px){
+    .viewty{
+        display: none;
     }
-    .frame{
-        transform: scale(0.82);
-        top: 20%;
+    .unsupported{
+        display: block;
+    }
+}
+@media only screen and (max-width:529px){
+    .viewty{
+        display: none;
+    }
+    .unsupported{
+        display: block;
     }
 }
 
-@media only screen and (min-width: 528px) and (min-height: 719px){
-    .hig-a1,.hig-a2 {
-        width: 80vw;
-        left: 1.5vw;
-    }
-    #sheen{
-        height: 830px;
-    }
-    #premLi{
-        font-size: 1.3rem;
-    }
-    .descriptor{
-        top: 75%;
-    }
+.unsupportedJS{
+    background: green;
 }
-@media only screen and (min-width: 605px) and (min-height: 719px){
-    .surDC,.surSt,.surHead{
-        height: 830px;
-    }    
-    #premLi{
-        font-size: 1.6rem;
-    }
-    #sheen{
-        height: 1040px;
-    }
-    .sideContent{
-        position: absolute;
-        top: 20%;
-        width: 100.1%; height: 80%;
-        background: linear-gradient(#ffff0093,black);
-        border-top-right-radius: 5rem;
+#enableJS{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.05rem;
+    width: 80vw;
+    height: 6rem;
 }
-.descriptor{
-    top: 85%;
+#enableJS:before{
+    font-family: 'faemoot_orn';
+    color: white;
+    content: "Sorry... some major features of TheMellowTheme website are not supported without javascript! :-(";
 }
+#enableJS:after{
+    font-family: 'faemoot_orn';
+    color: yellow;
+    content: 'Please enable javascript in your browser settings! :)';
 }
-
-@media only screen and (min-width: 535px) and (min-height: 960px) and (max-height: 965px){
-    .hig-a1,.hig-a2 {
-        width: 80vw;
-        left: 1.5vw;
-    }
-    #premLi{
-        font-size: 1.3rem;
-    }
-    #sheen{
-        height: 100vh;
-        min-height: 40rem;
-    }
-    .descriptor{
-        top: 75%;
-    }
-    .frame{
-        transform: scale(0.82);
-        top: 15%;
-    }
+#notifier{
+    background: green;
+    position: absolute;
+    top: 5rem;
+    left: 2rem;
+    font-size: 1.05rem;
+    width: 90%;
+    height: 6rem;
+    color: yellow;
+    font-family: 'faemoot_orn';
 }
-
-@media only screen and (min-width: 360px) and (max-height: 559px){
-       .descriptor{
-        position: fixed;
-        top: 5%;
-        left: -7rem;
-        height: 4rem;
-        z-index: 9;
-        opacity: 0;
-    }
+#notifier:before{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    content: "system.SLMGRprocess.systemUI.recurrExec^~~0n.bin has experienced a fatal exception error at 0x000ccexe : MALWARE DETECTED! Restart your system immediately to prevent hard drive corruption and . . . .";
 }
-/* .accomodate{
-    transform: scale(0.8);
-} */
+#notifier:after{
+    font-family: 'faemoot_orn';
+    color: white;
+    content: "Some major features of TheMellowTheme website are not supported at this resolution :-( . . . Maximise your browser window :-)";
+}
