@@ -27,7 +27,10 @@
     color: yellow;
     content: 'Please enable javascript in your browser settings! :)';
 }
-
+#squint{
+    width: 4.5rem;
+    height: 2.5rem;
+}
 
 .in_n {
     width: 6.2rem;
@@ -41,7 +44,7 @@
 }
 
 #notifier, #notifier2{
-    position: absolute;
+    position: fixed;
     top: 11rem;
     left: 2rem;
     font-size: 1.05rem;
@@ -67,8 +70,25 @@
 #notifier:after{
     font-family: 'faemoot_orn';
     color: yellow;
-    content:'If you are getting this message while using a computer, maximise your browser window and refresh the page... Possible fixes, if on mobile, include enabling desktop view, rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height. :-)';
+    content:'If you are getting this message while using a computer, maximise your browser window and refresh the page... Possible fixes, if on mobile, include rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height. :-)';
 }
+
+    .desktopModeDialog{
+        width: 30rem;
+        height: 30rem;
+        font-family: faemoot_orn;
+        padding-top: 5rem;
+        color: white;
+        font-size: 1.5rem;
+        display: none;
+        margin: auto;
+    }
+    .desktopModeDialog:before{
+        content: 'It appears you are trying to access the desktop version of theMellowTheme from a mobile device.';
+    }
+    .desktopModeDialog:after{
+        content: 'We do not really recommend this... but who are we to judge if you prefer to squint while you read ;-)';
+    }
 
 @media only screen and (max-width: 359px){
     body{
@@ -97,7 +117,7 @@
         display: block;
     }
     #notifier:after{
-    content:'Possible fixes, if on mobile, include enabling desktop view, rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height :-)';
+    content:'Possible fixes, if on mobile, include rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height :-)';
 }
     #notifier2{
         display: block;
@@ -130,7 +150,7 @@
     body{
         background: palevioletred;
     }
-    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown,#mainPg{
         display: none;
     }
     .unsupported{
@@ -143,7 +163,7 @@
     body{
         background: mediumaquamarine;
     }
-    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+    .cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown,#mainPg{
         display: none;
     }
     .unsupported{
@@ -209,7 +229,7 @@
         display: block;
     }
     #notifier:after{
-    content:'Possible fixes, if on mobile, include enabling desktop view, rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height :-)';
+    content:'Possible fixes, if on mobile, include rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height :-)';
 }
     #notifier2{
         display: block;
@@ -222,7 +242,7 @@
     body{
         background: grey;
     }
-    .mastHead,.cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+    .mastHead,.cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown,#mainPg{
         display: none;
     }
     .unsupported{
@@ -234,11 +254,14 @@
     body{
         background: grey;
     }
-    .mastHead,.cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown{
+    .mastHead,.cape,.surDC,.surSt,.surHead,.frame,.smDiv,.raiser,.raiser2,.tailEndSecure,.styleTapWrap,.themeSwitchGrasp,.themeButtons,.themeButtons2,.sidebar,.descriptor,.quiClixBox,.sunflap,.sidebell,.dialog,.bubble,.ballframe,.werey,#restoreUp,#restoreBack,#restoreDown,#mainPg{
         display: none;
     }
     .unsupported{
         display: none;
+    }
+    .desktopModeDialog{
+        display: block;
     }
 }
 /*auto redirect to desktop*/

@@ -393,7 +393,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
             width: 0; opacity: 0;
         }
     }
-.raiserVW,.raiser2VW,.raiser3VW,.raiser4VW,.raiser5VW{
+.raiserVW,.raiser2VW,.raiser3VW,.raiser4VW,.raiser5VW,.raiser6VW{
     position: relative;
     top: 14.88rem;
     margin: auto;
@@ -402,24 +402,29 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     height: calc(var(--standardSpace)*2);
     border-radius: 2%;
     margin-bottom:0;
-    background: red;
 }
 .raiser2VW{
-    background: orangered;
     top:21.6rem;
 }
-.raiser3VW, .raiser4VW, .raiser5VW{
+.raiser3VW, .raiser4VW, .raiser5VW, .raiser6VW{
     position: absolute;
     top: 13.41rem;
 }
-.raiser4VW{
+.raiser4VW, .raiser6VW{
     top:14.9rem;
+    /* background: green; */
 }
 .raiser5VW{
-    background:pink;
     top: 26.8rem;
 }
 
+.raiser4placer{
+    position: absolute;
+    width: 10rem;
+    left: 30rem;
+    top:0;
+    height: 18.2rem;
+}
 
 .hig-a1,.hig-a2 {
     position: relative;
@@ -515,21 +520,35 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 
 
 .themePanel{
-    position: relative;
+    position: absolute;
     top: 0;
-    margin-left: 11.2rem;
+    left: 11.2rem;
+    left: 28rem; /*not 30 like the rest, because its scaled*/
     width: 20.75rem;
-
     height: 14.4rem;
-    /* background: goldenrod; */
     background:#c0c0c038;
     transform: scale(0.8);
     opacity: 0;
     border-radius: 5px;
-    display: none;
-    opacity: 1;
-    display: block;
+    z-index: -99;
+    transition: 0.8s;
 }
+.resetsPanel{
+    position: relative;
+    top: 2.9rem;
+    /* left: 14.7rem; */
+    /* left: 17.4rem; */
+    left: 30rem;
+    
+    width: 12.5rem;
+    height: 6.5rem;
+    background: #c0c0c038;
+    border-radius: 3%;
+    opacity: 0;
+    z-index: -99;
+}
+
+/*foldMenu: circular buttons at the bottom of each menu*/ 
 .foldMenu, .foldMenuScale{
     position: absolute;
     bottom: 1.5rem;
@@ -549,6 +568,9 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 .foldMenu:hover, .foldMenuScale:hover, #styleTapVW:hover, #restoreBackVW:hover, #restoreUpVW:hover, #restoreDownVW:hover{
     cursor: pointer;
 }
+.foldMenu:hover, .foldMenuScale:hover{
+    background:rgb(255, 153, 0);
+}
 .foldMenu:active, .foldMenuScale:active{
     transform:translateY(4px);
 }
@@ -560,28 +582,15 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 .menuPanel{
     position: absolute;
     top: 22rem;
-    left: 54.05rem;
+    top:0;
+    left: 45rem;
     width: 10rem;
-    height: 18.2rem;
+    height: 16.3rem;
     background: #c0c0c038;
     border-radius: 3%;
     opacity: 0;
-    display: none;
 }
-.resetsPanel{
-    position: relative;
-    top: 0;
-    left: 14.7rem;
-    left: 30rem;
-    left: 17.4rem;
 
-    width: 12.5rem;
-    height: 6.5rem;
-    background: #c0c0c038;
-    border-radius: 3%;
-    /* opacity: 0;
-    display: none; */
-}
 
 /*definitions*/
     .playRun{
@@ -597,21 +606,48 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 
 /*styling functionality desc*/
 #styleVista, #menuVista, #resetsVista{
+/* be advised of the absolute positioning of the 4placer*/
     position: absolute;
     width: 3rem;
     height: 3rem;
     top: 0;
-    left: 27rem;
+    right: 10rem;
+    opacity: 0;
     background:#c0c0c038;
     border-radius: 25%;
     font-family: 'faemoot_orn';
 }
+.vista{
+    animation: vistaEmerge 1s ease-in-out 2.5s 1 forwards;
+}
+@keyframes vistaEmerge {
+    0%{
+        width: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    97%{
+        width: 2.93rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    100%{
+        width: 3rem;
+        border-radius: 1rem;
+        opacity: 1;
+    }
+}
+
 #menuVista{
+    top: 12rem;
     top: 4.27rem;
 }
 #resetsVista{
+    top: 16.84rem;
     top: 8.48rem;
 }
+
+
 
 .bigshot:hover{
     box-shadow: 10px 6px 3px #ff9900;
@@ -621,10 +657,10 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 }
 .bigshot:active{
     transform: translateY(4px);
-    box-shadow: 3px 4px 3px rgb(255, 153, 0);
+    box-shadow: 3px 4px 3px #ff9900;
 }
 
-#resetsVista:hover{
+.rVista:hover{
     box-shadow: 10px 6px 3px #ff0000;
 }
 
@@ -745,7 +781,6 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     height: calc(26*.225rem);
     z-index: 5;
     transition: 0.8s;
-
 }
 .da{
     position:absolute;
@@ -753,6 +788,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     top: 2.325rem;
     width: calc(15*0.225rem); 
     height: 3.7rem;
+    
 }
 #restoreUpVW, #restoreDownVW, #restoreBackVW{
     position: relative;

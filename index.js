@@ -319,7 +319,9 @@ dark =()=>{
     BarPick('--one');
     quiTab('--three');
     vitaStyle('--one');
+    vita[0].style.color="yellow";
 }
+dark();
 darkTheme.addEventListener("click",dark);
 light =()=>{
     hotshot();

@@ -204,90 +204,157 @@ function stlFx(){
 }
 
 //
-var themePanel = document.getElementsByClassName("themePanel")[0];
+var styleVista = document.getElementById('styleVista');
 var menuVista = document.getElementById('menuVista');
 var resetsVista = document.getElementById('resetsVista');
-var foldMenu = document.getElementsByClassName('foldMenuScale')[0];
-var foldMenuTwo = document.getElementsByClassName('foldMenu')[0];
-var foldMenuResets = document.getElementsByClassName('foldMenu')[1];
+var themePanel = document.getElementsByClassName("themePanel")[0];
 var menuPanel = document.getElementsByClassName('menuPanel')[0];
 var resetsPanel = document.getElementsByClassName('resetsPanel')[0];
-var styleVista = document.getElementById('styleVista');
+var foldMenuStyle = document.getElementsByClassName('foldMenuScale')[0];
+var foldMenuResets = document.getElementsByClassName('foldMenu')[0];
+var foldMenuBar = document.getElementsByClassName('foldMenu')[1];
 
-// vistaOne=()=>{
-//     themePanel.style.display='block';
-//     styleVista.style.opacity='0';
+styleVistaOne=()=>{
+    pops=()=>styleVista.style.visibility='hidden';
+    setTimeout(pops, 250);
+    themePanel.style.zIndex='99';
+    themePanel.style.opacity='1';
+    themePanel.style.left='11.2rem';
+}
+styleVistaTwo=()=>{
+    menuVista.style.top="12rem";
+    resetsVista.style.top="16rem";
+    menuVista.style.transition='0.4s';
+    resetsVista.style.transition='0.2s';
+}
+foldStyleMenuOne=()=>{
+    pops=()=>styleVista.style.visibility='visible';
+    setTimeout(pops, 250);
+    themePanel.style.zIndex='-99';
+    themePanel.style.opacity='0';
+    themePanel.style.left='28rem';
+}
+foldStyleMenuTwo=()=>{
+    pops=()=>{
+    menuVista.style.top="4.27rem";
+    resetsVista.style.top="8.48rem";
+    }
+    menuVista.style.transition='0.3s';
+    resetsVista.style.transition='0.5s';
+    setTimeout(pops, 350);
+}
 
-//     resetsPanel.style.left="18.7rem";
-//     resetsPanel.style.opacity="0";
 
-//     popOn=()=>{
-//     themePanel.style.left='14.7vw';
-//     themePanel.style.opacity='1';
-//     themePanel.style.transition='1s';
-//     }
-//     setTimeout(popOn,50);
-//     menuVista.style.transition='1s';
-//     resetsVista.style.transition='1s';
-//     themePanel.style.background='#c0c0c038';
-//     menuVista.style.top='31.2vw';
-//     resetsVista.style.top='35.2vw';
-// }
-// vistaOneFold=()=>{
-//     styleVista.style.opacity='1';
+resetsVistaNullifySelection=()=>{
+    shadey=()=> {
+        resetsVista.classList.remove('bigshot');
+        resetsVista.classList.remove('rVista');
+        resetsVista.classList.remove('vista');
+        resetsVista.style.opacity='1';
+        resetsVista.style.zIndex='99';
+    }
+    setTimeout(shadey,300);
+    resetsVista.style.background='#ff0000';
+    resetsVista.style.borderRadius='100%';
+    resetsVista.style.transform='scale(0.8)' //shrink selection
+}
+
+resetsVistaValidateSelection=()=>{
+    shadey=()=> {
+        resetsVista.classList.add('rVista');
+        resetsVista.classList.add('bigshot');
+        resetsVista.style.opacity='1';
+        resetsVista.style.zIndex='99';
+    }
+    setTimeout(shadey,300);
+    resetsVista.style.background='#c0c0c038';
+    resetsVista.style.borderRadius='1rem';
+    resetsVista.style.transform='scale(1)';
+    resetsVista.style.transition='0.8s';
+}
+
+menuVistaNullifySelection=()=>{
+    shadey=()=> {
+        menuVista.classList.remove('bigshot');
+        menuVista.classList.remove('vista');
+        menuVista.style.opacity='1';
+        menuVista.style.zIndex='99';
+    }
+    setTimeout(shadey,300);
+    menuVista.style.background='#ff9900';
+    menuVista.style.borderRadius='100%';
+    menuVista.style.transform='scale(0.8)' //shrink selection
+}
+
+menuVistaValidateSelection=()=>{
+    shadey=()=> {
+        menuVista.classList.add('bigshot');
+        menuVista.style.opacity='1';
+        menuVista.style.zIndex='99';
+    }
+    setTimeout(shadey,300);
+    menuVista.style.background='#c0c0c038';
+    menuVista.style.borderRadius='1rem';
+    menuVista.style.transform='scale(1)';
+    menuVista.style.transition='0.8s';
+}
+
+styleVistaTransform=()=>{
+        styleVistaOne();
+        styleVistaTwo();
+    }
     
-//     resetsPanel.style.left="18.7rem";
+styleVistaFold=()=>{
+        foldStyleMenuOne();
+        foldStyleMenuTwo();
+}
     
-//     themePanel.style.left='35vw';
-//     themePanel.style.opacity='0';
-//     themePanel.style.background='#c0c0c038';
-//     popOff=()=>themePanel.style.display='none';
-//     setTimeout(popOff,1000);
-//     menuVista.style.top='22.5vw';
-//     resetsVista.style.top='27.45vw';
-// }
+resetsVistaTransform=()=>{
+    resetsPanel.style.top='4.5rem';
+    resetsPanel.style.transition='1s';
+    resetsPanel.style.zIndex='99';
+    resetsPanel.style.opacity='1';
+    pops=()=>resetsPanel.style.left='40rem';
+    setTimeout(pops,850);
+    resetsVistaNullifySelection();
+}
 
-// styleVista.addEventListener('click',vistaOne);
-// foldMenu.addEventListener('click',vistaOneFold);
+resetsVistaFold=()=>{
+    resetsPanel.style.left='30rem';
+    resetsPanel.style.opacity='0';
+    resetsPanel.style.transition='0.9s';
+    pops=()=>resetsPanel.style.top='3rem';
+    pops2=()=>resetsPanel.style.zIndex='-99';
+    setTimeout(pops,800);
+    setTimeout(pops2,700);
+    resetsVistaValidateSelection();
+}
 
-// vistaTwo=()=>{
-//     menuVista.style.transform="translate";
-//     menuPanel.style.display='block';
-//     shadey=()=>menuVista.classList.remove('bigshot');
-//     setTimeout(shadey,300);
-//     menuVista.style.borderRadius='50%';
-//     menuVista.style.transform='scale(0.8)';//shrink selection
-//     popOn=()=>{
-//     menuPanel.style.top='14.8rem';
-//     menuPanel.style.opacity='1';
-//     menuPanel.style.transition='0.7s';
-//     }
-//     setTimeout(popOn,50);
-// }
-// vistaTwoFold=()=>{
-//     menuVista.style.borderRadius="25%";
-//     menuPanel.style.top='22rem';
-//     menuPanel.style.opacity='0';
-//     menuVista.classList.add('bigshot');    
-//     menuVista.style.borderRadius='25%';
-//     menuVista.style.transform='scale(1)';
-//     popOff=()=>menuPanel.style.display='none';
-//     setTimeout(popOff,1000);
-// }
-// menuVista.addEventListener('click',vistaTwo);
-// foldMenuTwo.addEventListener('click',vistaTwoFold);
+menuVistaTransform=()=>{
+    menuPanel.style.zIndex='99';
+    menuPanel.style.opacity='1';
+    menuPanel.style.left='52.6rem';
+    menuPanel.style.transition='0.5s';
+    menuVistaNullifySelection();
+}
 
-// vistaThree=()=>{
-//     resetsPanel.style.left='14.7rem';
-//     resetsPanel.style.opacity='1';
-// }
-// vistaThreeFold=()=>{
-//     resetsPanel.style.left='31.3rem';
-// }
-// resetsVista.addEventListener('click',vistaThree);
-// foldMenuResets.addEventListener('click',vistaThreeFold);
+menuVistaFold=()=>{
+    pops=()=>menuPanel.style.zIndex='-99';
+    setTimeout(pops,650);
+    menuPanel.style.opacity='0';
+    menuPanel.style.left='45rem';
+    menuPanel.style.transition='0.5s';
+    menuVistaValidateSelection();
+}
 
+styleVista.addEventListener('click',styleVistaTransform);
+foldMenuStyle.addEventListener('click',styleVistaFold);
 
+resetsVista.addEventListener('click',resetsVistaTransform);
+foldMenuResets.addEventListener('click',resetsVistaFold);
+
+menuVista.addEventListener('click',menuVistaTransform);
+foldMenuBar.addEventListener('click',menuVistaFold);
 
 var titleCard = document.querySelector('#titleCard');
 titleCard.innerHTML='The Mellow Theme';
