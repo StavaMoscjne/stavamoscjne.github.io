@@ -1,6 +1,6 @@
         var h = window.outerHeight;
         var w = window.outerWidth;
-        if(h>550 && w>550){
+        if(h>599 && w>599){
             window.location.replace('./index_home.html');
         }
         else{
