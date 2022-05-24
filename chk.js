@@ -5,5 +5,4 @@
         }
         else{
             sessionStorage.setItem('browser','mobile');
-            window.reload();
         }
