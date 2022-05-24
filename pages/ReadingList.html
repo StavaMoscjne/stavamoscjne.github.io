@@ -5,13 +5,14 @@
     <title>what's Actual...</title>
     <link rel="stylesheet" href="../css/RList.css">
     <link rel="stylesheet" href="../unsupported.css">
-    <link rel="icon" type="image/x-icon" href='../pics/theme.ico'>
+    <link rel="icon" href='../pics/theme.ico'>
+    <script src="./chkp.js"></script>
 </head>
 <body> 
     <div class="surDC"></div>
     <div class="surSt"></div>
     <div class="surHead"></div>
-<div id='mainPg'>
+
 
     <div class="sidebar" id="sidebar"> 
         <div class="sideContent"> 
@@ -21,11 +22,13 @@
                 <li> <a class="autresLi" id="meji" href='#'> + link to page </a></li>
                 <li> <a class="autresLi" id="ato" href='#'> + added link</a></li>
                 <li> <a class="autresLi" id="merin" href='#'> + added link</a></li>
-                <li> <a class="autresLi" id="ise" href='#'> + added link</a></li>        
+                <li> <a class="autresLi" id="ise" href='#'> + added link</a></li>
+                <br><br>        
+                <button> <a href='../index.html' style='color: #000;'>Home</a></button>
             </ul>
         </div>
     </div>
-
+<div id='mainPg'>
     <div class="quiClixBox Alt" id="quiClixBox1"> 
         <button class="quiClix" onclick="prep()" id='quiClix'>
             <span id="it">QuiClicks!</span>
@@ -35,22 +38,22 @@
     <div class="headingBlock"> Reading List</div>
 
     <div class="realLife">
-        <div class='caption'>Real life stuff >>></div>
-        <div class="RLS" id='rls'> 
-             <div class="rls_text"> <a href='#'>''top droow'r''</a> </div>
+        <div class='caption'>the Real life stuff >>></div>
+        <div class="RLS rTop" id='rls'> 
+             <div class="rls_text rTop" >''top droow'r''</div>
         </div>
-        <div class="RLS" id='ntslf'> 
-            <div class="ntslf_text"> <a href='#'>Reminder of the Love</a> </div>
+        <div class="RLS rRem" id='ntslf'> 
+            <div class="ntslf_text rRem">Reminder of the Love</div>
         </div>
-        <div class="RLS" id='foi'>
-            <div class="foi_text"><a href='#'>Fairly Odd interest</a></div>
+        <div class="RLS rOdd" id='foi'>
+            <div class="foi_text rOdd">Fairly Odd interests</div>
         </div>
     </div>
 
     <div id="breakLine"> </div>
 
     <div class="escapismGrasp">
-        <div class="caption2"> ESCAPISMS </div>
+        <div class="caption2"> the ESCAPISMS </div>
         <div class="ESC" id='esc'>
             <div class="escIN" id='escOne'>
             <ul>
@@ -85,31 +88,113 @@
         </div>
         <div class="cardDeck">
             <div class="ESCfeatures g">
-                <div class="ESCfeaturesText">and mull amongst the bubbles</div>
+                <div class="ESCfeaturesText TOE"><br>and mull amongst the bubbles</div>
+                <div id='tub'></div>
             </div>
             <div class="ESCfeatures f">
-                <div class="ESCfeaturesText">varied Perspective</div>
+                <div class="ESCfeaturesText ASR"><br><br><br>varied Perspective</div>
+                <div id="awfsom"> </div>
             </div>
             <div class="ESCfeatures e">
-                <div class="ESCfeaturesText">and the Vawulent taketh by force...</div>
+                <div class="ESCfeaturesText TYS">...and the Vawulent taketh by force.</div>
+                <div id="pepe"></div>
             </div>
             <div class="ESCfeatures d">
-                <div class="ESCfeaturesText">Keep Up with Death and his gimmicks as he remedies and unlikely affliction.</div>
+                <div class="ESCfeaturesText DAR">Keep Up with Death and his gimmicks as he remedies and unlikely affliction.</div>
+                <div id="diar"> </div>
             </div>
             <div class="ESCfeatures c">
-                <div class="ESCfeaturesText">Up Top!</div>
+                <div class="ESCfeaturesText HI"><br><br>Up Top!</div>
+                <div id="hiFi"> </div>
             </div>
             <div class="ESCfeatures b">
-                <div class="ESCfeaturesText">Wisdom of the Leaves</div>
+                <div class="ESCfeaturesText HB">Wisdom of the Leaves</div>
+                <div id='#hitsB'> </div>
             </div>
-            <div class="ESCfeatures a">
-                <div class="ESCfeaturesText">...until</div>
+            <div class="ESCfeatures a" id='ganSt'>
+                <div class="ESCfeaturesText EvGn">...until</div>
             </div>
             <div class="ESCfeatures cardstack"> </div>
         </div>
-    </div>
-    <div class="theMixPanel">
+    </div><!--escapismGrasp end-->
+    <div class="theMsgPanel">
+        <div class='messageText'> 
+            <div class="imgHolderTopper" id=top></div>
+            He that dwelleth in the secret place of the Most High, shall abide under the shadow of the Almighty.
+            <div class="imgHolderFirst"></div>
+        </div>
+        
+        <div class='m2'> He shall say of the Lord: <i>"You are my refuge and my fortress, you are my God in whom I trust!"</i>
+            <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> For surely the Lord will deliver you from the snare of the enemy and from deadly pestilence...
+        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> He will cover you with his wings, and under their protection you will be safe; his faithfulness will be your defence and your shield.
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> For you shall not be afraid of the terror that comes by night, or the arrow that flies by day, or the plague that strikes in the dark, or the pestilence that wasteth at noonday.
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> A thousand may fall by your left, ten thousand by your right, but no harm will befall you.
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> And with your eyes you shall see the punishment of the wicked...
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> ...because you have made the Lord your refuge, and the Most High is your habitation: There no disaster will come to you, and neither shall any evil come near your household.
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> For God will give his angels charge over you, to protect you in all your comings and goings... 
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> They will hold you up in their hands to keep your feet from striking a stone. 
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> You will trample upon the lion and the adder; upon ferocious beasts and poisonous snakes. <i>The lion and the Dragon shall you trample under your feet!</i>
+                    <div class="imgHolder"></div></div>
+        <br>
+        <div class='m2'> Because he has set his faith upon the Lord, the Most High will deliver him
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'>God says: <i>"I will save those who love me, and I will protect those who acknowledge me as Lord."</i>
+                    <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> I will set him on high because he hath known my name
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> When he calls upon me I will answer him... i will be with him in times of trouble.
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class='m2'> With long life i will reward him, and I will show him my salvation!
+                        <div class="imgHolder"></div>
+        </div>
+        <br>
+        <div class=m2>
+        <button id="collect">Exit</button><br>
+        <button><a href='#top'>Back to top</a></button>
+        <button>More</button>
+        <div class="m2">.</div>
+        </div>
+    </div><!--theMsgPanel end-->
 
+    <div class="topDrawerPanel" style="color: black"> 
+        content to be uploaded soon
+        <br>
+        <button id='closeDrawer'>Back</button>
     </div>
 </div><!--mainPg end-->
 
@@ -117,7 +202,11 @@
         <div class="in_next"> </div>
         <div id="notifier"> </div>
     </div>
-    
+    <div class="desktopModeDialog"> 
+        <br><br>Well here you go: <button id="squint"> HERE </button><br><br> 
+    </div>
+    <script src="../js/featured.js"></script>
     <script src="../js/pages.js"></script>
+    <script src="./resp.js"></script>
 </body>
 </html>
