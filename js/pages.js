@@ -44,7 +44,7 @@ var btn = document.getElementById('quiClix');
 var quicText = document.getElementById('it');
 var kree = document.getElementById('mainPg');
 
-side.classList.add('vraisVis');
+side.classList.add('vraisVisE');
 sideContent.style.transition='1s';
 
 function bG(n){
@@ -123,7 +123,7 @@ dusk =()=>{
     BarHead('--four');
     BarPick('--one');
     quiTab('--forest');
-    bodyText('--three');
+    bodyText('--illumin');
 }
 
 belle =()=>{
@@ -173,36 +173,27 @@ function prep(){
     }
 }
 
+var msgPanel = document.getElementsByClassName('theMsgPanel')[0];
+var topDrawerPanel = document.getElementsByClassName('topDrawerPanel')[0];
+var rRem = document.querySelector('.rRem');
+var rTop = document.querySelector('.rTop');
+var rOdd = document.querySelector('.rOdd');
+var collect = document.querySelector('#collect');
+var closeDrawer = document.querySelector('#closeDrawer');
 
-
-var cardDeck = document.getElementsByClassName('cardDeck')[0];
-var allCards = document.getElementsByClassName('ESCfeatures');
-var cardstack = document.getElementsByClassName('cardstack')[0];
-    
-    function enableEsc(){
-        for(var i=0; i < allCards.length; i++){
-            allCards[i].classList.add('vraisVis');
-            allCards[i].style.opacity='1';
-            allCards[i].style.transform="translateY(3rem)";
-        }
+reminderOf =()=> msgPanel.classList.add('active');
+rRem.addEventListener("click",reminderOf);
+reminderDone =()=> msgPanel.classList.remove('active');
+collect.addEventListener("click",reminderDone);
+drawerOpen =()=> topDrawerPanel.classList.add('drawerActive');
+rTop.addEventListener("click",drawerOpen);
+rOdd.addEventListener("click",drawerOpen);
+drawerClosed =()=> {
+    topDrawerPanel.classList.add('drawerPassive');
+    reset=()=>{
+        topDrawerPanel.classList.remove('drawerPassive');
+        topDrawerPanel.classList.remove('drawerActive');
     }
-    
-calico=(n)=>{
-    var hanged = document.getElementsByClassName('sway');
-    hanged[n].onclick =()=>{
-        for(var i=0; i < allCards.length; i++)
-        {
-        allCards[i].classList.add('vraisVis');
-        allCards[i].style.transform="translateY(4rem)";
-        }
-        popped=()=>{
-            allCards[n].style.transform='translateY(-6rem)';
-        }
-        setTimeout(popped,860);
-        }
+    setTimeout(reset, 1000);
 }
-bonnie=()=>{
-    for (var jack=0; jack<allCards.length; jack++){
-    calico(jack);
-    }}
-bonnie();
+closeDrawer.addEventListener("click",drawerClosed);
