@@ -56,6 +56,17 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         width: 22.5rem;
         margin: auto;
 }
+@media only screen and (min-height: 700px) and (max-height: 900px){
+#mainPg{
+        transform: scaleY(1.1);
+}
+}        
+@media only screen and (min-width: 409px) and (max-width: 490px){
+#mainPg{
+        transform: scaleX(1.13) scaleY(1.3);
+        padding-top: 0.5rem;
+}
+}
 .surHead{
         position: absolute; top: 0;
         width: 100%; 
@@ -380,7 +391,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         perspective: 12rem;
 }
 .RLS{
-        background: #c0c0c038;
+        /* background: #c0c0c038; */
         border-radius: 5px;
         position: absolute;
 }
@@ -402,8 +413,10 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         color:white;
         border: solid 5px rgb(112, 31, 31);
         font-family: eraser;
-        font-size: 1rem;
-        text-indent: 1.1rem;
+        font-size: 0.85rem;
+        text-indent: 1.8rem;
+        text-align: center;
+        box-sizing: content-box;
 }
 #rls{
         left: 5px;
@@ -440,8 +453,11 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         left: 190px;
 }
 #ntslf{
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
+        background-image: url('../pics/rose_note.png');
+        background-size: 3.4rem;
+        background-repeat: no-repeat;
 }
 .ntslf_text{
         width: 45px;
@@ -455,6 +471,9 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         width: 135px;
         height: 3.5rem;
         top: 3.5rem;
+        background-image: url('../pics/interests.png');
+        background-size: cover;
+        background-repeat: no-repeat;
 }
 .foi_text{
         position: relative;
@@ -489,12 +508,16 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         left: 12rem;
 
 }
-.ESCfeatures{
+.ESCfeatures, #pepe, #tub, #awfsom, #diar, #hiFi, #hitsB{
         width: 10rem;
         height: 10rem;
         left: 0;
         opacity: 0;
         color: white;
+}
+#pepe, #tub, #awfsom, #diar, #hiFi, #hitsB{
+        position: absolute;
+        opacity: 1;
 }
 .ESCfeaturesText{
         position: relative;
@@ -525,14 +548,14 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         /* transform: skewX(12deg); */
 }
 .b{
-        background:rgba(51, 51, 139, 0.8);
+        background:rgba(51, 51, 139, 0.9);
         top: 1.8rem;
         transition: 0.9s;
         z-index: 8;
 }
 .c{
         background:green;
-        background: linear-gradient(rgba(0, 128, 128, 0.98),rgb(144, 238, 144, 0.98));
+        background: linear-gradient(rgba(0, 128, 128, 0.8),rgb(144, 238, 144, 0.8));
         top: 1.5rem;
         transition: 0.5s;
         z-index: 7;
@@ -544,11 +567,10 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         z-index: 6;
 }
 .e{
-        background:yellow;
-        background: linear-gradient(rgb(154, 205, 50, 0.9), rgb(165, 42, 42, 0.9));
         top: 0.9rem;
         transition: 0.6s;
         z-index: 5;
+        background: linear-gradient(rgb(154, 205, 50, 0.9), rgb(165, 42, 42, 0.9));
 }
 .f{
         background: brown;
@@ -591,6 +613,9 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 .vraisVis{
         opacity:1;
 }
+.vraisVisE{
+        opacity:0.95;
+}
 .escCont{
         position: relative;
         text-indent: 1rem;
@@ -611,4 +636,171 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         color: inherit;
         transform: translateX(-0.5rem);
         transition: 0.6s;
+}
+#diar{
+        top: 0rem;
+        background-image: url('../pics/death-and-cerbry.png');
+        background-repeat: no-repeat;
+        background-size: 70%;
+        background-position-y: 0.6rem;
+        background-position-x: 1.5rem;
+}
+#pepe{
+        top: 2rem;
+        background-image: url('../pics/pepe_sullen.png'),url('../pics/pepe_smugg.png');
+        background-repeat: no-repeat, no-repeat;
+        background-size: 58%, 60%;
+        background-position-x: 0.33rem, 3.7rem;
+        background-position-y: -1rem, -1rem;
+}
+#tub{
+        top: 1rem;
+        background-image: url('../pics/tub.jpg');
+        background-repeat: no-repeat;
+        background-size: 70%;
+        background-position-x: center;
+}
+#awfsom{
+        top: 0;
+        background-image: url('../pics/pyed.png');
+        background-repeat: no-repeat;
+        background-size: 95%;
+        background-position-y: 1.5rem;
+}
+#hiFi{
+        top: 0;
+        background-image: url('../pics/high_five.png');
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position-x: center;
+        background-position-y: 0.6rem;
+}
+
+.theMsgPanel{
+        position: relative;
+        top: 0.6rem;
+        width: 5rem;
+        height: 1.5rem;
+        background: #cab988;
+        margin: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        overflow-y: scroll;
+        border: 1rem solid;
+        display: none;
+        box-sizing: border-box;
+}
+.active{
+animation: theNote 1s linear 0s 1 forwards normal;
+display: block;
+}
+.rlmsg:hover{
+        cursor: pointer;
+}
+.messageText, .m2{
+        width: 17rem;
+        color: brown;
+        position: relative;
+        font-family: cicle_fina;
+        top: 0;
+        left: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 1.5rem;
+        text-align: justify;
+}
+.m2{
+        top: 4rem;
+        letter-spacing: 0.2px;
+        font-size: 1.3rem;
+}
+.imgHolderFirst{
+        position: relative;
+        top: 1.5rem;
+        width: 15rem;
+        height: 13rem;
+        background: orangered;
+        margin:auto;
+}
+.imgHolder{
+        position: relative;
+        top: 0.5rem;
+        width: 14rem;
+        height: 10rem;
+        background: blue;
+        margin:auto;
+}
+.imgHolderTopper{
+        position: relative;
+        top: 0;
+        width: 12rem;
+        height:4rem;
+        background: brown;
+        margin:auto;
+}
+
+@keyframes theNote {
+40%{
+        width: 19rem;
+        height: 1rem;
+        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+}
+50%{
+        width: 22rem;
+        height: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+}
+100%{
+        width: 22rem;
+        height: 34.5rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+}
+}
+
+/* the top drawer concerns*/
+.topDrawerPanel{
+        position: relative;
+        top: 0.5rem;
+        width: 22rem;
+        left: 22rem;
+        height: 35rem;
+        background: #c0c0c0;
+        opacity: 0.8;
+        border-radius: 0.5rem;
+        display: none;
+}
+.drawerActive{
+        display: block;
+        animation: topDrawer 1s ease-in-out 0s 1 forwards normal;
+}
+.drawerPassive{
+        animation: drawerClosed 1s ease-in-out 0s 1 forwards normal;
+}
+
+@keyframes topDrawer{
+100%{
+        left: 0;
+        margin: auto;
+        opacity: 0.8;
+}
+}
+@keyframes drawerClosed{
+0%{
+        top: 0.5rem;
+        width: 22rem;
+        left: 0;
+        opacity: 0.8;
+        margin: auto;
+}
+100%{
+        height: 0;
+        left: 0;
+        margin: auto;
+        opacity: 0;
+}
 }
