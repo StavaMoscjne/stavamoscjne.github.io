@@ -1,27 +1,27 @@
 @font-face{
      font-family: faemoot_orn;
      src: url('../fonts/faemoot4o-webfont.woff');
-font-display: block;
+     font-display: block;
 }
 @font-face{
      font-family: faemoot_reg;
      src: url('../fonts/faemoot4s-webfont.woff');
-font-display: block;
+     font-display: block;
 }
 @font-face {
      font-family: cicle_shadow;
      src: url('../fonts/cicle_shadow-webfont.woff');
-font-display: block;
+     font-display: block;
 }
 @font-face {
      font-family: cicle_fina;
      src: url('../fonts/cicle_fina-webfont.woff');
-font-display: block;
+     font-display: block;
 }
 @font-face {
      font-family: eraser;
      src: url('../fonts/EraserRegular-webfont.woff');
-font-display: block;
+     font-display: block;
 }
 
 body::-webkit-scrollbar, body::-moz-scrollbar{
@@ -61,6 +61,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         width: 22.5rem;
         margin: auto;
 }
+
 .surHead{
         position: absolute; top: 0;
         width: 100%; 
@@ -385,7 +386,6 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         perspective: 12rem;
 }
 .RLS{
-        /* background: #c0c0c038; */
         border-radius: 5px;
         position: absolute;
 }
@@ -415,8 +415,8 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 #rls{
         left: 5px;
         width: 180px;
-        height: 180px;
-        background: none;
+        height: 150px;
+        background: #c0c0c018;
         background-image: url('../pics/top_drawer.png');
         background-position-y: 40%;
         background-repeat: no-repeat;
@@ -690,6 +690,48 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 animation: theNote 1s linear 0s 1 forwards normal;
 display: block;
 }
+.themeNone{
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 8;
+        display: none;
+
+}
+.themeSettingsNotifier{
+        position: absolute;
+        width: 64%;
+        left: 0;
+        height: 13rem;
+        top: 2rem;
+        background: greenyellow;
+        border-radius: 1rem;
+        z-index: 9;
+        font-family: cicle_fina;
+        font-size: 0.9rem;
+        box-sizing: border-box;
+        padding: 1rem;
+        font-weight: bolder;
+        display: none;
+        opacity: 0;
+        animation: slush 0.4s linear 0.1s 1 forwards normal;
+}
+.themeSettingsNotifier a{
+        outline: none;
+        text-decoration: none;
+}
+.themeSettingsNotifier button{
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+}
+@keyframes slush{
+        100%{
+        left: 18%;
+        opacity: 1;
+        }
+}
+
 .rlmsg:hover{
         cursor: pointer;
 }
@@ -715,15 +757,137 @@ display: block;
         top: 1.5rem;
         width: 15rem;
         height: 13rem;
-        background: orangered;
+        /* background: orangered; */
         margin:auto;
+}
+.na{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_a.png');
+        background-repeat: no-repeat;
+        background-size: 92%;
+        background-position-x: 1rem;
+}
+.nb{
+        height: 85%;
+        background-image: url('../pics/Reminder/note_b.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 2rem;
+
+}
+.nc{
+        height: 110%;
+        background-image: url('../pics/Reminder/note_c.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1rem;
+
+}
+.nd{
+        height: 110%;
+        background-image: url('../pics/Reminder/note_d.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1rem;
+        background-position-y: 0.5rem;
+
+}
+.ne{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_e.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+
+}
+.nf{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_f.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1rem;
+
+}
+.ng{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_g.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+.nh{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_h.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+.ni{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_ai.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+.nj{
+        height: 90%;
+        background-image: url('../pics/Reminder/note_j.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+.nk{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_k.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+.nl{
+        height: 95%;
+        background-image: url('../pics/Reminder/note_L.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+.nm{
+        height: 120%;
+        background-image: url('../pics/Reminder/note_m.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1rem;
+}
+.nn{
+        height: 100%;
+        background-image: url('../pics/Reminder/note_n.png');
+        background-repeat: no-repeat;
+        background-size: 83%;
+        background-position-x: 1.6rem;
+        background-position-y: 1rem;
+}
+.no{
+        height: 97%;
+        background-image: url('../pics/Reminder/note_o.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.7rem;
+}
+.np{
+        height: 97%;
+        background-image: url('../pics/Reminder/note_p.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 1.5rem;
+}
+#top{
+        padding: 0.2rem; margin-bottom: 0.4rem; background: none;
 }
 .imgHolder{
         position: relative;
         top: 0.5rem;
-        width: 14rem;
-        height: 10rem;
-        background: blue;
+        width: 15rem;
+        height: 12rem;
+        /* background: blue; */
         margin:auto;
 }
 .imgHolderTopper{
@@ -733,6 +897,19 @@ display: block;
         height:4rem;
         background: brown;
         margin:auto;
+}
+.msgPanelButtons{
+        position: relative;
+        top:0;
+        border-radius: 5rem;
+        margin: auto;
+        display: flex;
+        align-items: stretch;
+}
+.msgPanelButtons button{
+        border-radius: inherit;
+        padding: 0.4rem;
+        margin: auto;
 }
 
 @keyframes theNote {
