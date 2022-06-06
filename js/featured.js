@@ -1,6 +1,7 @@
 var cardDeck = document.getElementsByClassName('cardDeck')[0];
 var allCards = document.getElementsByClassName('ESCfeatures');
 var cardstack = document.getElementsByClassName('cardstack')[0];
+var chalkboard = document.getElementsByClassName('caption2')[0];
     
     function enableEsc(){
         for(var i=0; i < allCards.length; i++){
@@ -15,8 +16,10 @@ calico=(n)=>{
     hanged[n].onclick =()=>{
         for(var i=0; i < allCards.length; i++)
         {
-        allCards[i].classList.add('vraisVis');
-        allCards[i].style.transform="translateY(4rem)";
+            allCards[i].classList.add('vraisVis');
+            allCards[i].style.transform="translateY(4rem)";
+            chalkboard.style.opacity='0.1';
+
         }
         popped=()=>{
             allCards[n].style.transform='translateY(-6rem)';

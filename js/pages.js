@@ -3,6 +3,8 @@ setPref =(a)=> {
     localStorage.setItem('ambience',a); 
     return
 }
+var forceSelect = document.getElementsByClassName('themeSettingsNotifier')[0];
+var blockSelect = document.getElementsByClassName('themeNone')[0];
 
 window.onload = function(){
     if(localStorage.getItem("setPreference")=="set"){
@@ -31,6 +33,7 @@ window.onload = function(){
         }
         else{
             localStorage.setItem("setPreference","unset");
+            forceSelect.style.display=blockSelect.style.display='block';
         }
     }
 
