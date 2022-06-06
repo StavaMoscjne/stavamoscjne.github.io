@@ -251,7 +251,8 @@ var duskTheme = document.getElementById('dusk');
 var belleTheme = document.getElementById('belle');
 var sur = document.getElementsByClassName("surHead")[0];
 var surSt= document.getElementsByClassName('surSt')[0]; 
-var surDsk= document.getElementsByClassName('surDsk')[0]; 
+var surDsk= document.getElementsByClassName('surDsk')[0];
+
 
 function bG(n){
     sur.style.background=getComputedStyle(document.documentElement).getPropertyValue(n)
@@ -321,7 +322,6 @@ dark =()=>{
     vitaStyle('--one');
     vita[0].style.color="yellow";
 }
-dark();
 darkTheme.addEventListener("click",dark);
 light =()=>{
     hotshot();
