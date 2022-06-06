@@ -8,10 +8,10 @@
     <link rel="icon" href='../pics/theme.ico'>
 </head>
 <body> 
+    <script src="./chkp.js"></script>
     <div class="surDC"></div>
     <div class="surSt"></div>
     <div class="surHead"></div>
-
 
     <div class="sidebar" id="sidebar"> 
         <div class="sideContent"> 
@@ -23,11 +23,17 @@
                 <li> <a class="autresLi" id="merin" href='#'> + added link</a></li>
                 <li> <a class="autresLi" id="ise" href='#'> + added link</a></li>
                 <br><br>        
-                <button> <a href='../index.html' style='color: #000;'>Home</a></button>
+                <button style="padding: 0.3rem; border-radius: 1rem;"> <a style='color:#000;' href='../index.html'>Home</a></button>
             </ul>
         </div>
     </div>
 <div id='mainPg'>
+    <div class="themeNone"></div>
+    <div class="themeSettingsNotifier">
+        <p>Slow down, hero... <br><br>You have not yet chosen a theme. <br><br>Navigate to the <i><strong>'StyleTap'</strong></i> button on the homepage, and select your preference.</p><br>
+        <button><a href='../index.html'>Home</a></button>
+    </div>
+
     <div class="quiClixBox Alt" id="quiClixBox1"> 
         <button class="quiClix" onclick="prep()" id='quiClix'>
             <span id="it">QuiClicks!</span>
@@ -39,7 +45,7 @@
     <div class="realLife">
         <div class='caption'>the Real life stuff >>></div>
         <div class="RLS rTop" id='rls'> 
-             <div class="rls_text rTop" >''top droow'r''</div>
+            <div class="rls_text rTop" >''top droow'r''</div>
         </div>
         <div class="RLS rRem" id='ntslf'> 
             <div class="ntslf_text rRem">Reminder of the Love</div>
@@ -117,75 +123,98 @@
         </div>
     </div><!--escapismGrasp end-->
     <div class="theMsgPanel">
+        <button id='top'><a href='#bottom'>skip to bottom</a></button>
         <div class='messageText'> 
-            <div class="imgHolderTopper" id=top></div>
+            <div class="imgHolderTopper"></div>
             He that dwelleth in the secret place of the Most High, shall abide under the shadow of the Almighty.
-            <div class="imgHolderFirst"></div>
+            <div class="imgHolderFirst">
+                <div class='na'></div>
+            </div>
         </div>
         
         <div class='m2'> He shall say of the Lord: <i>"You are my refuge and my fortress, you are my God in whom I trust!"</i>
-            <div class="imgHolder"></div>
+            <div class="imgHolder">
+                <div class='nb'></div>
+            </div>
         </div>
         <br>
         <div class='m2'> For surely the Lord will deliver you from the snare of the enemy and from deadly pestilence...
-        <div class="imgHolder"></div>
+        <div class="imgHolder">
+            <div class='nc'></div>
+        </div>
         </div>
         <br>
         <div class='m2'> He will cover you with his wings, and under their protection you will be safe; his faithfulness will be your defence and your shield.
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">
+                <div class='nd'></div>
+            </div>
         </div>
         <br>
         <div class='m2'> For you shall not be afraid of the terror that comes by night, or the arrow that flies by day, or the plague that strikes in the dark, or the pestilence that wasteth at noonday.
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">                
+                <div class='ne'></div>
+            </div>
         </div>
         <br>
         <div class='m2'> A thousand may fall by your left, ten thousand by your right, but no harm will befall you.
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">                
+                <div class='nf'></div>
+            </div>
         </div>
         <br>
         <div class='m2'> And with your eyes you shall see the punishment of the wicked...
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">
+                <div class='ng'></div></div>
         </div>
         <br>
         <div class='m2'> ...because you have made the Lord your refuge, and the Most High is your habitation: There no disaster will come to you, and neither shall any evil come near your household.
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">
+                <div class="nh"></div>
+            </div>
         </div>
         <br>
         <div class='m2'> For God will give his angels charge over you, to protect you in all your comings and goings... 
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">
+                <div class="ni"></div>
+            </div>
         </div>
         <br>
         <div class='m2'> They will hold you up in their hands to keep your feet from striking a stone. 
-                        <div class="imgHolder"></div>
+            <div class="imgHolder">
+                <div class="nj"></div>
+            </div>
         </div>
         <br>
         <div class='m2'> You will trample upon the lion and the adder; upon ferocious beasts and poisonous snakes. <i>The lion and the Dragon shall you trample under your feet!</i>
-                    <div class="imgHolder"></div></div>
+            <div class="imgHolder"><div class="nk"></div></div>
+        </div>
         <br>
         <div class='m2'> Because he has set his faith upon the Lord, the Most High will deliver him
-                        <div class="imgHolder"></div>
+            <div class="imgHolder"><div class="nl"></div></div>
         </div>
         <br>
         <div class='m2'>God says: <i>"I will save those who love me, and I will protect those who acknowledge me as Lord."</i>
-                    <div class="imgHolder"></div>
+            <div class="imgHolder"><div class="nm"></div></div>
         </div>
         <br>
         <div class='m2'> I will set him on high because he hath known my name
-                        <div class="imgHolder"></div>
+            <div class="imgHolder"><div class="nn"></div></div>
         </div>
         <br>
-        <div class='m2'> When he calls upon me I will answer him... i will be with him in times of trouble.
-                        <div class="imgHolder"></div>
+        <div class='m2'> When he calls upon me I will answer him... I will be with him in times of trouble.
+            <div class="imgHolder"><div class="no"></div></div>
         </div>
         <br>
-        <div class='m2'> With long life i will reward him, and I will show him my salvation!
-                        <div class="imgHolder"></div>
+        <div class='m2'> With long life I will reward him, and I will show him my salvation!
+            <div class="imgHolder"><div class="np"></div></div>
         </div>
         <br>
-        <div class=m2>
-        <button id="collect">Exit</button><br>
-        <button><a href='#top'>Back to top</a></button>
-        <button>More</button>
+        <div class=m2 id="bottom">
+            <div class="msgPanelButtons">
+                <button id="collect">Exit</button>
+                <button><a href='#top'>Back to top</a></button>
+                <button>More</button>
+            </div>
         <div class="m2">.</div>
         </div>
     </div><!--theMsgPanel end-->
