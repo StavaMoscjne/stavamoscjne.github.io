@@ -675,6 +675,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         top: 0.6rem;
         width: 5rem;
         height: 1.5rem;
+        scroll-behavior: smooth;
         background: #cab988;
         margin: auto;
         border-top-left-radius: 2rem;
