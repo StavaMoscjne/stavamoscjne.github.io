@@ -1,0 +1,120 @@
+@font-face {
+    font-family: digital;
+    src: url('./digital7italic-rbm3-webfont.woff2');
+}
+
+body{
+    background-image:url('./lighthouse.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 12rem;
+    background-color:rgba(119, 75, 18, 0.493);
+}
+.base{
+    position: relative;
+    width: 15rem;
+    height: 20rem;
+    background: yellowgreen;
+    margin: auto;
+    top:5rem;
+    transform: scale(1.3);
+}
+
+.frame{
+    position: relative;
+    width: 14rem;
+    height: 19rem;
+    top: 0.5rem;
+    background: black;
+    margin: auto;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.screen{
+    position: relative;
+    width: 90%;
+    background:#c0c0c045;
+    height: 2.4rem;
+    top: 1rem;
+    left: 3%;
+    color: white;
+    font-size: 2.3rem;
+    font-family: 'digital';
+    text-align: right;
+}
+
+.numberFrame{
+    position: absolute;
+    width: 8.5rem;
+    height: 12rem;
+    background: black;
+    left: 1rem;
+    top: 5.2rem;
+}
+.operatorFrame{
+    position: absolute;
+    width: 3rem;
+    height: 12rem;
+    left: 10rem;
+    top: 4.5rem;
+}
+#one, #four, #seven, #decimal{
+    margin-left: 0.1rem;
+}
+#sig{
+    color: #fff; font-size: 0.7rem;
+}
+.numKey{
+    position: relative;
+    float: left;
+    width: 2.7rem;
+    margin-right: 0.1rem;
+    margin-top: 0.15rem;
+    height: 2.8rem;
+    background: black;
+    border-radius: 0.2rem;
+    background: rgba(119, 75, 18, 0.75);
+    background: #3f2727;
+    text-align: center;
+    line-height: 3.2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+}
+.numKey:active, .opKey:active{
+    transform: translateY(0.2rem);
+}
+.opKey{
+    height: 2rem;
+    width: 3rem;
+    text-align: center;
+    margin-bottom: 0.2rem;
+    background: #00ffffa4;
+    color: black;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 0.9rem;
+    outline: none;
+
+}
+#clear{
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: red;
+    font-size: 0.8rem;
+    color: greenyellow;
+    padding-bottom: 0.4rem;
+    padding-left: 0.3rem;
+    font-weight: bold;
+}
+#equals{
+    background: greenyellow;
+}
+.key{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

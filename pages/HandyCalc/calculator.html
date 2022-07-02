@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Calc</title>
+    <link rel="stylesheet" href="./calculator.css">
+</head>
+<body>
+    <div class="base">
+        <div class="frame">
+            <input type='text' value='' class="screen" disabled/>
+            
+            <div class="numberFrame">
+            <button type="button" value="7" class='numKey digit key'>7</button>
+            <button type="button" value="8" class='numKey digit key'>8</button>
+            <button type="button" value="9" class='numKey digit key'>9</button>
+            <button type="button" value="4" class='numKey digit key'>4</button>
+            <button type="button" value="5" class='numKey digit key'>5</button>
+            <button type="button" value="6" class='numKey digit key'>6</button>
+            <button type="button" value="1" class='numKey digit key'>1</button>
+            <button type="button" value="2" class='numKey digit key'>2</button>
+            <button type="button" value="3" class='numKey digit key'>3</button>
+            <button type="button" value="." class='numKey key decimal'>.</button>
+            <button type="button" value="0" class='numKey key digit'>0</button>
+            <p id='sig'></p>
+        </div><!--numberFrame-->
+
+        <div class="operatorFrame">
+            <button type="button" value='CLR' id="clear" class="clearAll opKey key">CLR</button>
+            <button type="button" value='add' id="add" class="opKey key">+</button>
+            <button type="button" value='subt' id="subtract" class="opKey key">-</button>
+            <button type="button" value='divd' id="divide" class="opKey key">/</button>
+            <button type="button" value='mult' id="multiply" class="opKey key">&times;</button>
+            <button type="button" value='equals' id="equals" class="opKey key">=</button>
+        </div><!--operatorFrame-->
+        
+    </div> <!--frame-->
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
