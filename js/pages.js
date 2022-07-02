@@ -184,18 +184,51 @@ var rOdd = document.querySelector('.rOdd');
 var collect = document.querySelector('#collect');
 var closeDrawer = document.querySelector('#closeDrawer');
 
+var g =document.querySelector('.g');
+var tubG =document.querySelector('.ihaisi');
+var drawer =document.querySelector('.drawer');
+var interests =document.querySelector('.interests');
+var bann = document.querySelector('.subBannerLie');
+
 reminderOf =()=> msgPanel.classList.add('active');
 rRem.addEventListener("click",reminderOf);
 reminderDone =()=> msgPanel.classList.remove('active');
 collect.addEventListener("click",reminderDone);
 drawerOpen =()=> topDrawerPanel.classList.add('drawerActive');
-rTop.addEventListener("click",drawerOpen);
-rOdd.addEventListener("click",drawerOpen);
+rTop.addEventListener("click",topList);
+rOdd.addEventListener("click",oddList);
+g.addEventListener("click",tubList);
+    function tubList(){
+        drawerOpen();
+        topDrawerPanel.classList.add('topPanelAura');
+        drawer.style.display=interests.style.display='none';
+        tubG.style.display='block';
+        g.onclick=removeEventListener('click',tubList);
+        bann.innerHTML='I Have a Tub I Soak In';
+    }
+    
+    function topList(){
+        drawerOpen();
+        topDrawerPanel.classList.add('topPanelAura2');
+        tubG.style.display=interests.style.display='none';
+        drawer.style.display='block';
+        bann.innerHTML='Top Drawer &#128076; ';
+    }
+    function oddList(){
+        drawerOpen();
+        topDrawerPanel.classList.add('topPanelAura3');
+        drawer.style.display=tubG.style.display='none';
+        interests.style.display="block";
+        bann.innerHTML='Miscellaneous Amusements';
+    }
 drawerClosed =()=> {
     topDrawerPanel.classList.add('drawerPassive');
     reset=()=>{
         topDrawerPanel.classList.remove('drawerPassive');
         topDrawerPanel.classList.remove('drawerActive');
+        topDrawerPanel.classList.remove('topPanelAura');
+        topDrawerPanel.classList.remove('topPanelAura2');
+        topDrawerPanel.classList.remove('topPanelAura3');
     }
     setTimeout(reset, 1000);
 }
