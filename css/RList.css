@@ -671,11 +671,11 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
 }
 
 .theMsgPanel{
+        scroll-behavior: smooth;
         position: relative;
         top: 0.6rem;
         width: 5rem;
         height: 1.5rem;
-        scroll-behavior: smooth;
         background: #cab988;
         margin: auto;
         border-top-left-radius: 2rem;
@@ -941,24 +941,35 @@ display: block;
         width: 22rem;
         left: 22rem;
         height: 35rem;
-        background: #c0c0c0;
-        opacity: 0.8;
+        background: rgba(75, 75, 75, 0.95);
         border-radius: 0.5rem;
         display: none;
+        overflow-y: scroll;
+}
+.topPanelAura{
+        background-image: url('../pics/theory/rings.jpeg');
+}
+.topPanelAura2{
+        background-image: url('../pics/food.jpg');
+        background-size: 150%;
+        background-repeat: no-repeat;
+}
+.topPanelAura3{
+        background-image: url('../pics/dice.jpg');
+        background-repeat: no-repeat;
 }
 .drawerActive{
         display: block;
         animation: topDrawer 1s ease-in-out 0s 1 forwards normal;
 }
 .drawerPassive{
-        animation: drawerClosed 1s ease-in-out 0s 1 forwards normal;
+        animation: drawerClosed 0.5s ease-in-out 0s 1 forwards normal;
 }
 
 @keyframes topDrawer{
 100%{
         left: 0;
         margin: auto;
-        opacity: 0.8;
 }
 }
 @keyframes drawerClosed{
@@ -975,4 +986,87 @@ display: block;
         margin: auto;
         opacity: 0;
 }
+}
+
+/*within the drawer*/
+.drawer, .interests,.ihaisi,.drawerBox, .interestsBox,.tubBox{
+        position: relative;
+        width:95%;
+        height: 3rem;
+        margin: auto;
+        margin-bottom: 1rem;
+        font-family: faemoot_reg;
+        font-weight: bold;
+}
+.ihaisi, .tubBox{
+        background: none;
+}
+
+.drawerBox, .interestsBox, .tubBox{
+        position: absolute;
+        width: 100%;
+}
+
+/* .drawer, .interests{
+display: none;
+} */
+
+/* .interestsBox{
+        background: yellow;
+} */
+.pictureBox{
+        width: 95px;
+        height: 75px;
+        position: absolute;
+}
+.captionBox, .captionBox2{
+        width: 70%;
+        height: 45px;
+        font-weight:bold;
+        color:#ffc002;
+        position: absolute;
+        left: 30%;
+}
+.captionBox{
+        line-height: 3;
+}
+#tTOC, #opPiece{
+        margin-top: 6rem;
+}
+#tTOA, #creations, #calc{
+        margin-top: 12rem;
+}
+#tTOL, #andOthers{
+        margin-top: 18rem;
+}
+.subBannerLie{
+        position: absolute;
+        height: 3rem;
+        width: 75%; height: 101%;
+        background: gray;
+        background: rgba(75, 75, 75, 0.95);
+        color: white;
+        font-family: faemoot_orn;
+        font-weight: bold;
+        font-size: 1.1rem;
+        line-height: 2.5;
+        text-indent: 1rem;
+        font-family: cicle_fina;
+        border-bottom-right-radius: 2rem;
+}
+#closeDrawer{
+        position:relative;
+        width: 3rem; height: 2.1rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        margin-left: 18rem;
+        font-weight: bold;
+        border-radius: 15px;
+        background: rgb(79, 170, 255);
+}
+.closeDrawer{
+        position: sticky;
+        top: 0;
+        z-index: 12;
+        margin-bottom: 0.5rem;
 }
