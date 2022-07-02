@@ -1,0 +1,955 @@
+body::-webkit-scrollbar{
+    width:0;
+    height: 0;
+}
+body::-moz-scrollbar{
+    width:0;
+    height: 0;
+}
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+
+    --standardSpace: 0.45rem;
+    --framingWidth: calc(70*0.225rem);
+    --framingHeight: calc(64.95*0.225rem);
+    --higHeight: 11.98rem;
+    --overlapPane: #2e2201;
+    
+    --surHeadDark: #000;
+    --surHeadClone: linear-gradient(180deg, #0000009f, #00008b2f);
+    --surHeadBelle: #ffc0cb;
+    --surHeadDark: #000;
+    --surHeadLight: #f5f5f5;
+    --surHeadNavy: #00003a;
+    --surHeadMeadow: rgba(73, 0, 0, 0.466);
+    --one: #f5f5f5;
+    --two: #000;
+    --three: #808080;
+    --four: #5c0000;
+
+    --aether: #4400ff;
+    --forest: #008000;
+    --illumin: #bebe4d;
+    --sea: #012146;
+    --donna: #99525e;
+}
+
+.surDCVW, .surStVW, .surHeadVW{
+    position: absolute;
+    transition: 1.5s;
+    width: 100vw;
+    min-height: 50rem;
+    z-index:-99;
+}
+
+.surDCVW{
+    background: linear-gradient(180deg, #0000009f, #00008b2f);
+}
+.surStVW{
+    background: radial-gradient(circle,#f7984a, rgb(14, 32, 6));
+}
+.surHeadVW{
+    background: var(--surHeadDark);
+}
+.viewty{
+    color: white;
+    margin: auto;
+    width: 99%;
+
+}
+.frameVW{
+    position: relative; 
+    top: 30vh; 
+    margin: auto;
+    width: var(--framingWidth); 
+    height: var(--framingHeight);
+    z-index: -9;
+}
+
+.hig-3{
+    position: absolute; top: 0;
+    width: 100%; height: 100%;
+    transition: 0.5s;
+    z-index: -5;
+}
+.hig-3an{
+    animation: milieu 0.5s ease-out 8s 1 normal forwards;
+}
+.hig-4,.hig-5,.hig-7,.hig-8,.hig-9{
+    z-index: -4;
+}
+.hig-4,.hig-5,.hig-6,.hig-7{
+    position: absolute;
+    width: 49.4%;
+    height: 49.4%;
+}
+.hig-4,.hig-7,.hig-8,.hig-9{
+    background: #50505070;
+    transition: 2s;
+}
+.hig-4{
+    top: 0; left:0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    background-image: url('./pics/hig/hig-4.png');
+}
+.hig-5{
+    left: 50.6%; bottom: 50.6%;
+    background: #50505070;
+    display: none;
+}
+.hig-5an{
+    animation: reduce 1s linear 0.6s 1 normal forwards;
+}
+.hig-6{
+    bottom: 0;
+    z-index: -3;
+}
+.hig-6an{
+    animation: overlap 3s ease-in-out 1.6s 1 normal both; 
+}
+.hig-7{
+    bottom: 0; right: 0;
+    background-repeat: no-repeat;
+    background-image: url('./pics/hig/hig-7.png');
+}
+.hig-7an{
+    animation: turn 4.4s ease-out 1s 1 normal forwards;
+}
+.hig-8,.hig-9{
+    position: absolute;
+    width: 24.2%;
+    box-sizing: border-box;
+}
+.hig-8{
+    top: 50.6%; height: 24.8%;
+    background-repeat: no-repeat;
+    background-image: url('./pics/hig/hig-8.png');
+}
+.hig-8an{
+    animation: clove 1s ease 6.4s 1 normal forwards;   
+}
+.hig-9{
+    top: 50.6%; left: 25.2%;
+    height: 32.7%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./pics/hig/hig-9.png');
+}
+.hig-9an{
+    animation: extend 6s ease 1.3s 1 normal forwards;
+}
+
+/*synchronizing of the panes*/
+@keyframes reduce {
+    100% {            
+        height: 0%; width: 0%;
+    }
+}
+
+@keyframes overlap{
+    0%{
+        z-index: 3; width: 49.4%; height: 0;
+        background: var(--overlapPane);
+    }
+    20%{ 
+        z-index: 3; width: 49.4%; height: 49.4%; left:0%;
+        animation-timing-function: ease-in-out;
+    }
+    45%{
+        z-index:3; width: 49.4%; height: 49.4%; left:50.6%;
+        bottom:0; background:var(--overlapPane);
+        transform: skewX(0);
+        animation-timing-function: ease-out;
+    }
+    50%{
+        z-index:3; width: 49.4%; height: 24.7%; left:62.5%;
+        bottom:24.7%; background:var(--overlapPane);
+        transform: skewX(45deg);
+        animation-timing-function: ease-out;
+    }
+    54%{
+        z-index:3; width: 49.4%; height: 4.94%; left:62.5%;
+        bottom:44.46%; background:var(--overlapPane);
+        transform: skewX(79deg);
+        animation-timing-function: ease-out;
+    }
+    54.5%{
+        z-index:3; width: 49.4%; height: 0; left:62.5%;
+        bottom:49%; background:var(--overlapPane);
+        transform: skewX(88.5deg);
+        animation-timing-function: ease-out;
+    }
+    55%{
+        z-index:3; width: 0; height: 0; left:62%;
+        bottom:50.6%; background:var(--overlapPane);
+        transform: skewX(0deg);
+        animation-timing-function: ease-out;
+    }
+    55.5%{
+        z-index:3; width: 4.94%; height: 0; left:62.5%;
+        bottom:50.6%;
+        transform: skewX(-88.5deg);
+        animation-timing-function: ease-out;
+    }
+    56%{
+        z-index:3; width: 48%; height: 3%; left: 62.5%;
+        bottom:50.6%; background:#e6e6e68f;
+        transform: skewX(-79deg);
+        animation-timing-function: ease-out;
+    }
+    60%{
+        z-index:3; width: 48%; height: 24.7%; left: 62.5%;
+        bottom:50.6%; background:#e6e6e680;
+        transform: skewX(-45deg);
+        animation-timing-function: ease-out;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+    }
+    65%{
+        z-index:3; width: 49.4%; height: 49.4%; left:50.6%;
+        bottom:50.6%; background:#e6e6e671;
+        transform: skewX(0deg);
+        animation-timing-function: ease-out;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+    }
+    70%{
+        z-index:-3; width: 49.6%; height: 45%; left:48.3%; 
+        bottom:50.6%; background: #e6e6e6a8;
+        transform: skewX(10deg);
+        animation-timing-function: linear;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+    }
+    75%{
+        z-index:3; width: 49.4%; height: 49.4%; left:50.6%; 
+        bottom:50.6%; background: #e6e6e69f;
+        transform: skewX(0deg);
+        animation-timing-function: ease;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    80%{
+        z-index:3; width: 49.4%; height: 49%; left:52%; 
+        bottom:50.6%; background: #e6e6e671;
+        transform: skewX(-5deg);
+        animation-timing-function: linear;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    90%{
+        z-index:3; width: 49.4%; height: 49.4%; left:50.6%; 
+        bottom:50.6%; background: #c0c0c071;
+        transform: skewX(0deg);
+        animation-timing-function: ease-out;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    100%{
+        z-index:3; width: 49.4%; height: 49.4%; left:50.6%; 
+        bottom:50.6%; background: #c0c0c094;
+        transform: skewX(0deg);
+        animation-timing-function: ease-out;
+        background-image: url('./pics/hig/hig-6.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@keyframes turn{
+    11.5%{
+        background-image: url('./pics/hig/hig-7.png');
+        transform: rotateY(90deg);
+    }
+    11.55%{
+        background: #c0c0c038;
+    }
+    
+    11.56%{
+        background:url('./pics/hig/hig-extend.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    34%{
+        transform: rotateY(195deg);
+    }
+    36%{
+        transform: rotateY(180deg);
+    }
+    
+    37.5%{
+        transform: rotateY(195deg);
+    }
+    40%{
+        transform: rotateY(180deg);
+        background:url('./pics/hig/hig-extend.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    84%{
+        transform: rotateY(180deg);
+        background:url('./pics/hig/hig-extend.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;            
+    }
+    91%{
+        background:url('./pics/hig/hig-extend.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    92%{
+        background: #c0c0c0af;
+    }
+    100%{
+        transform: rotateZ(180deg);
+        background-image:url('./pics/hig/hig-7flip.png');
+    }
+}
+@keyframes extend {
+    20.83%{ 
+        height: 32.7%;
+    }
+    41.67%{ 
+        height: 49%;
+    }
+    66.67%{ 
+        height: 49%; top: 50.6%;
+    }
+    82.5%{
+        top: 77%; height: 22.6%;
+    }
+    97%{
+        top: 77%; height: 22.6%;
+    }
+    100%{
+        top: 99%; height: 0;
+        background-repeat: no-repeat;
+        background-image: fixed;
+        background-size: cover;
+    }
+}
+@keyframes clove{
+    70%{
+        width: 49.4%;
+        height: 24.8%;
+        z-index: 4;
+    }
+    100%{
+        width: 49.4%;
+        height: 49%;
+        z-index: 4;
+        background-repeat: no-repeat;
+        background-image: url('./pics/hig/hig-8.png');
+    }
+}
+@keyframes milieu {
+    100%{
+        transform: rotate3d(1,1,0, -90deg);
+        animation: ease-in;
+    }
+}
+.smDivA{
+    position: relative;
+    margin: auto;
+    top: var(--framingHeight);
+    animation: shrink 1s ease 9s normal forwards;
+    }
+
+.st{
+    height: var(--standardSpace);
+}
+@keyframes shrink {
+        0%{
+            width: var(--framingWidth);
+        }
+        100%{
+            width: 0; opacity: 0;
+        }
+    }
+
+.raiserVW, .raiser2VW, .raiser3VW{
+    position: relative;
+    top: 14.88rem;
+    width: 20rem;
+    margin: auto;
+    height: calc(var(--standardSpace)*2);
+    border-radius: 2%;
+    margin-bottom:0;
+
+}
+
+.raiser3VW{
+    top: 0;
+}
+
+.hig-a1,.hig-a2 {
+    position: absolute;
+    top: 0;
+    left: -1.25rem;
+    width: 22.5rem;
+    height: var(--higHeight);
+    background:#c0c0c038;
+    border-radius: 2%;
+    z-index: -2;
+
+}
+.hig-a2{
+    height: calc(var(--standardSpace)*10);
+}
+
+@font-face {
+    font-family: faemoot_orn;
+    src: url('./fonts/faemoot4o-webfont.woff');
+    font-display: block;
+}
+
+#titleCard{
+    font-family: 'faemoot_orn';
+    font-size: 2rem;
+    width: 55%;
+    height: 50%;
+    position: relative;
+    left: calc(var(--standardSpace)*-2);
+    top: -4rem;
+    float: right;
+}
+#visitor, #veteran{
+    margin-left: calc(10*0.225rem);
+    margin-top: calc(2*0.225rem);
+    transition: 1s;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    width: 40%; 
+    height: 2.9rem;
+    border-radius: 1rem;
+    background: none;
+    padding: 0.82px;
+    z-index: -2;
+
+}
+#veteran{
+    margin-left: 0;
+}
+
+.act1{
+    animation: terminalCover 2s ease 9.5s normal forwards;
+}
+.act2{
+    animation: terminalCover2 2s ease 10.4s normal forwards;
+}
+@keyframes terminalCover {
+    100%{
+        top:0;
+        opacity:1;
+    }
+}
+@keyframes terminalCover2 {
+    100%{
+        top: 11.3rem;
+        opacity:1;
+    }
+}
+.act1a{
+    animation: terminalCover 2s ease 0s normal forwards;
+}
+.act2a{
+    animation: terminalCover2 2s ease 1s normal forwards;
+}
+    .in_next {
+        width: 6.2rem;
+        height: 6.2rem;
+        background: whitesmoke;
+        position: relative;
+        top: calc(2.5rem*0.82);
+        margin-left: 2rem;
+        border-radius: 25%;
+        animation: inNext 4s linear infinite;
+}
+@keyframes inNext {
+    0% {
+        transform: translate(0%, 0%) perspective(600px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+        transform: translate(0%, 0%) perspective(600px) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+
+.themePanel{
+    position: absolute;
+    top: -18rem;
+    left:-20.05rem;
+    left:-3.2rem;
+    width: 20.75rem;
+    height: 14.4rem;
+    background:#c0c0c038;
+    transform: scale(0.8);
+    border-radius: 5px;
+    opacity: 0;
+    border-radius: 5px;
+    z-index: -99;
+    transition: 0.8s;
+}
+.menuPanel{
+    position: absolute;
+    top: -17.3rem;
+    left: 12rem;
+    width: 10rem;
+    height: 16.3rem;
+    background: #c0c0c038;
+    border-radius: 3%;
+    z-index: -99;
+    opacity: 0;
+}
+.resetsPanel{
+    position: relative;
+    top: -3.5rem;
+    left: -1.25rem;
+    width: 12.5rem;
+    height: 6.5rem;
+    background: #c0c0c038;
+    border-radius: 0.3rem;
+    opacity: 0;
+    z-index: -99;
+}
+
+/*reset generation*/
+.TBB{
+        position: absolute;
+        font-size: 0.6rem;
+        border-radius: 50%;
+        border-style: outset;
+        width: 3rem;
+        height: 3rem;
+        top: 0.5rem;
+    }
+    .TBB:active{
+        border-style: groove;
+        transform: translateY(0.5rem);
+    }
+    .TBB:hover{
+        cursor: pointer;
+    }
+    #TBRB{
+        color: yellow;
+        background: #ff1515;
+        right: 0.5rem;
+    }
+    #TBGB{
+        color: #fff;
+        background: green;
+        right: 4rem;
+    }
+    #TBYB{
+        display: none;
+    }
+
+
+/*foldMenu: circular buttons at the bottom of each menu*/ 
+.foldMenu, .foldMenuScale{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: red;
+    border-radius: 50%;
+    z-index: 12;
+}
+.foldMenu{
+    bottom: calc(1.5rem*0.8);
+    left: calc(1.5rem*0.8);
+    width: calc(2.2rem*0.8);
+    height: calc(2.2rem*0.8);
+}
+.foldMenu:hover, .foldMenuScale:hover, #styleTapVW:hover, #restoreBackVW:hover, #restoreUpVW:hover, #restoreDownVW:hover{
+    cursor: pointer;
+}
+.foldMenu:hover, .foldMenuScale:hover{
+    background:rgb(255, 153, 0);
+}
+.foldMenu:active, .foldMenuScale:active{
+    transform:translateY(4px);
+}
+
+.raiser4placer{
+    position: absolute;
+    width: 10rem;
+    left: -1.25rem;
+    top: -17.5rem;
+    height: 11.5rem;
+}
+.r4placerBeside{
+    position: absolute;
+    width: 10rem;
+    left: -5rem;
+    top: -17.5rem;
+    height: 11.5rem;
+    animation: Renable 3s linear 1s 1 forwards;
+}
+@keyframes Renable {
+    100%{
+        z-index: -99;
+    }
+}
+
+/*the reset preferences activation concerns*/
+@font-face {
+    font-family: 'faemoot_reg';
+    src: url("./fonts/faemoot4s-webfont.woff");
+}
+@font-face {
+    font-family: 'cicle';
+    src: url("./fonts/cicle_fina-webfont.woff");
+}
+.dialog{
+    position: absolute;
+    top: 0rem;
+    right: 0rem; 
+    width: 100%;
+    height: 200%;
+    padding: 1rem;
+    font-family: "cicle";
+    border-style: double;
+    background: gray;
+    color: white;
+    font-size: 0.9rem;
+    box-sizing: content-box;
+    z-index: -10;
+    opacity: 0;
+}
+
+.diagActive{
+    animation: dialog 0.6s ease 0s 1 forwards normal;
+}
+
+.dialog span{
+    font-family: "faemoot_reg";
+}
+.warn{
+    font-size: 1.3rem;
+    color: #000;
+    font-weight: bold;
+    margin-right: 6rem;
+    outline: none;
+    user-select: none;
+}
+.pro{
+    margin-left: 30%;
+    color: rebeccapurple;
+    font-weight: bold;
+}
+.dialogBtn{
+    width: 45%; height: 15%;
+    margin-left: 0.4rem;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+@keyframes dialog{
+    100%{
+        top: 0vw;
+        opacity: 1;
+        z-index: 12;
+    }
+}
+/*end 0f reset preference activation concerns*/
+
+/*the theme concerns*/
+.Qual:hover{
+    cursor: pointer;
+}
+/*The theme switchboard setup*/
+.tailEndSecureVW{
+    position: absolute;
+    height: calc(50*0.225rem);
+    z-index: 5;
+}
+
+.themeSwitchGraspVW{
+    position: absolute;
+    height: calc(35*0.225rem);
+    z-index: 2;
+}
+
+.themeButtonsVW, .themeButtons2VW{
+    position: absolute;
+    width: calc(72*0.225rem);
+    height: calc(20*0.225rem);
+    opacity: 0;
+    z-index: 3;
+    transition: 0.8s;
+    left: 0.5rem;
+}
+
+.themeButtons2VW{
+    position: absolute;
+    z-index: 4;
+}
+
+#styleTapVW, #lightThemeVW, #darkThemeVW, #duskVW, #blueVW, #steelVW, #belleVW, #restoreUpVW, #restoreDownVW {
+    font-family: 'faemoot_orn';
+    font-size: 0.82rem; font-weight: bold;
+    padding: 0.4rem 0.5rem;
+    width: 25%;
+    margin-top: 0.4rem;
+    margin-right: 0.9rem;
+    z-index: inherit;
+}
+#lightThemeVW{
+    color:#0f1410;
+    background:#ffd900de;
+}
+#darkThemeVW{
+    color:#ffd900de;
+    background:#0f1410b2;
+}
+#styleTapVW:active, #lightThemeVW:active, #darkThemeVW:active, #duskVW:active,#blueVW:active, #steelVW:active, #belleVW:active, #restoreBackVW:active{
+    transform: translateY(4px);
+}
+#blueVW{
+    background: blue;
+    color:white;
+}
+#steelVW{
+    background: steelblue;
+    color:white;
+}
+#belleVW{
+    background: #ff5470;
+    color:black;
+}
+#duskVW{
+    background: #a82c1c;
+    color:white;
+}
+#styleTapVW{
+    background: rebeccapurple;
+    color: #d3d3d3;
+    width: 35%; 
+    height: calc(2.5rem*0.82);
+    border-bottom-right-radius: 2rem;
+    margin-left: 0;
+    transition: 1.3s;
+    opacity: 1;
+}
+.styleTapWrapVW{
+    position: absolute;
+    height: calc(26*.225rem);
+    z-index: 5;
+    transition: 0.8s;
+}
+.da{
+    position:absolute;
+    right:0;
+    top: 2.325rem;
+    width: calc(15*0.225rem); 
+    height: 3.7rem;
+    
+}
+#restoreUpVW, #restoreDownVW, #restoreBackVW{
+    position: relative;
+    height:1.8rem; 
+    width: calc(15*0.225rem); 
+    font-size: 2.3rem; 
+    color: yellowgreen;
+    line-height: 0.6;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#restoreUpVW{
+    color: slateblue;
+    background: yellowgreen;
+    z-index: 1;
+}
+#restoreDownVW{
+    line-height: 0.7;
+    background: slateblue;
+    z-index: 3;
+}
+#restoreBackVW{
+    font-size: calc(2rem*0.82);
+    line-height: 0.4;
+    background: red;
+    z-index: 3;
+}
+#restoreUpVW, #restoreDownVW, #restoreBackVW{
+    position:absolute;
+    left: 0;
+    margin: 0;
+    top:0;
+}
+#restoreBackVW{
+    top: 2rem;
+}
+.themeButtonsVW{
+    top: 4.032rem;
+}
+.themeButtons2VW{
+    top: 5.712rem;
+}
+.styleTapWrapVW, .tailEndSecureVW, .themeSwitchGraspVW{
+    width: 20.75rem;
+}
+.tailEndSecureVW{
+    top: 0.5rem;
+}
+.themeSwitchGraspVW{
+    top: 5%;
+    top: 1.68rem;
+}
+.styleTapWrapVW{
+    top: 7%;
+    top: 2.352rem;
+}
+/* further button concerns*/
+.choice, .default{
+    border-radius: 25px;
+}
+/*end of theme concerns*/
+
+.nullVis{
+    opacity: 0;
+}
+
+
+/*styling functionality desc*/
+#styleVista, #menuVista, #resetsVista{
+/* be advised of the absolute positioning of the 4placer*/
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 0;
+    right: 10rem;
+    opacity: 0;
+    background:#c0c0c038;
+    border-radius: 25%;
+    font-family: 'faemoot_orn';
+
+}
+#menuVista{
+    top: 12rem;
+    top: 4.27rem;
+}
+#resetsVista{
+    top: 16.84rem;
+    top: 8.48rem;
+}
+.bigshot:hover{
+    box-shadow: 10px 6px 3px #ff9900;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: translateY(-4px);
+}
+.bigshot:active{
+    transform: translateY(4px);
+    box-shadow: 3px 4px 3px #ff9900;
+}
+.rVista:hover{
+    box-shadow: 10px 6px 3px #ff0000;
+}
+.vista{
+    animation: vistaEmerge 1s ease-in-out 12.5s 1 forwards;
+}
+.vistaAlt{
+    animation: vistaEmerge 1s ease-in-out 2.5s 1 forwards;
+}
+@keyframes vistaEmerge {
+    0%{
+        width: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    63%{
+        width: 3.08rem;
+        border-top-right-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+    }
+    90%{
+        width: 2.97rem;
+        border-top-right-radius: 0.8rem;
+        border-bottom-right-radius: 0.8rem;
+    }
+    100%{
+        width: 3rem;
+        border-radius: 1rem;
+        opacity: 1;
+    }
+}
+
+/* media queries */
+
+@media only screen and (min-height: 768px){
+    .surDCVW, .surStVW, .surHeadVW{
+        height: 48rem;
+    }
+}
+@media only screen and (min-height: 800px){
+    .surDCVW, .surStVW, .surHeadVW{
+        height: 50rem;
+    }
+}
+@media only screen and (min-height: 900px){
+    .surDCVW, .surStVW, .surHeadVW{
+        height: 56.25rem;
+    }
+}
+@media only screen and (min-height: 950px){
+    .surDCVW, .surStVW, .surHeadVW{
+        height: 60rem;
+    }
+}
+@media only screen and (min-height: 1024px){
+    .surDCVW, .surStVW, .surHeadVW{
+        height: 65rem;
+    }
+}
+@media only screen and (min-height: 1200px){
+    .surDCVW, .surStVW, .surHeadVW{
+        height: 75rem;
+    }
+}
+
+/* for iPad*/
+@media only screen and (max-width: 850px){
+    .viewty{
+        transform: scale(0.9);
+        margin-left: 2.5rem;
+    }
+}
+
+/* for 600px tablets*/
+@media only screen and (max-width: 620px){
+    .viewty{
+        transform: scale(0.7);
+    }
+}
+
+/*Miscellaneous*/
+@media only screen and (max-width: 694px){
+    .viewty{
+        transform: scale(0.75);
+    }
+}
+
+.fold{
+    z-index: -2;
+}

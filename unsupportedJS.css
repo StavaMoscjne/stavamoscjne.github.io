@@ -1,0 +1,40 @@
+.unsupported, .unsupportedJS{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100vw;
+}
+.unsupportedJS{
+    background: green;
+    display: block;
+}
+#enableJS{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.05rem;
+    width: 80vw;
+    height: 6rem;
+}
+#enableJS:before{
+    font-family: 'faemoot_orn';
+    color: white;
+    content: "Sorry... some major features of TheMellowTheme website are not supported without javascript! :-(";
+}
+#enableJS:after{
+    font-family: 'faemoot_orn';
+    color: yellow;
+    content: 'Please enable javascript in your browser settings! :)';
+}
+
+.in_n {
+    width: 6.2rem;
+    height: 6.2rem;
+    background: whitesmoke;
+    position: absolute;
+    left: 20rem;
+    top: 6rem;
+    border-radius: 25%;
+    animation: inNext 4s linear infinite;
+}

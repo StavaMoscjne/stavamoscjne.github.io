@@ -453,6 +453,7 @@ function prep(){
         sheen.style.zIndex='8';
         sheen.style.opacity='0.5';
         tutorial.innerHTML='The QuiClix button opens the customisable sidebar...';
+        mad.classList.add('nextLegible');
     }
     tour.addEventListener('click',tutorialActive);
 /*one*/ mad.onclick =()=>{
@@ -460,6 +461,7 @@ function prep(){
         tutorial.style.fontSize="0.7rem";
 /*two*/     mad.onclick =()=>{
                 mad.classList.add('nxSlide');
+                mad.classList.remove('nextLegible');
                 tutorial.style.fontSize="1rem";
                 tutorial.innerHTML="The StyleTap button brings out a list of color schemes you can choose from...";
                 tutorialSlide.classList.remove('bubbleActive');
