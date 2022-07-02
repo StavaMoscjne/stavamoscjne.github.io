@@ -1,3 +1,3 @@
-function forceRedirect(){window.location.replace('../index_home.html')};
+function forceRedirect(){window.location.replace('../home.html')};
 var squint = document.getElementById('squint');
 squint.addEventListener('click',forceRedirect);
