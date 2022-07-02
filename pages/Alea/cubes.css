@@ -1,0 +1,399 @@
+body{
+        background-image: url('./glass.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position-y: 0rem;
+}
+
+.contain{
+    transform: scale(0.85);
+    background-image: url('./dice.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0rem;
+
+}
+.frame{
+    transform: scale(0.7);
+    position: relative;
+    width: 12rem; height: 15.5rem;
+    margin: auto;
+    top:5rem;
+    background: burlywood;
+    padding: 0.5rem;
+    padding-top: 3rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.floorboard{
+    position: absolute;
+    width: 145%;
+    height: 19%;
+    background: rgb(194, 150, 92);
+    top: 96%;
+    left: -22%;
+    transform: perspective(3px) rotateX(3deg);
+}
+@keyframes raiseShield3{
+    100%{
+    left: 50%;
+    top: 100%;
+    transform: skewY(5deg) rotateY(180deg);
+    background: grey;
+    width: 30%; height: 15%;
+    border-top-left-radius: 1rem;
+    z-index: 2;
+    opacity: 1;
+    }
+}
+@keyframes raiseShield2 {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        height: 18%;
+        width: 55%;
+        left: -52%;
+        opacity: 1;
+        }
+}
+@keyframes raiseShield {
+    100%{
+        width: 35%;
+        height: 60%;
+        top: 68%; left: -30%; transform: skewY(-35deg) skewX(35deg) perspective(6px) rotateY(4deg) rotateZ(0deg) scale(0.4);
+        border-radius: 1rem;
+    }
+}
+@keyframes raiseWall {
+    10%{
+        opacity: 1;
+        top: 106%;
+    }
+    75%{
+        background: rgb(194, 150, 92);
+    }
+    80%{
+        background: yellowgreen;
+    }
+    100%{
+    width: 95%; height: 15%;
+    top: 97.5%;
+    left: 100%;
+    opacity: 1;
+    transform: skewY(21deg);
+    border-top-right-radius: 1rem;
+    /* font-family: faemoot_orn;
+    letter-spacing: 0.5px; */
+    }
+}
+.raiseFlap{
+    animation: raiseShield 1s linear 0s 1 forwards normal;
+}
+.raiseFlap2{
+    animation: raiseShield2 1s linear 0s 1 forwards normal;
+}
+.raiseFlap3{
+    animation: raiseShield2 1s linear 0s 1 forwards normal
+}
+.raiseFlap4{
+    animation: raiseShield3 1s linear 0s 1 forwards normal
+}
+.raiseWall{
+    animation: raiseWall 1.8s linear 0s 1 forwards normal;
+}
+
+.flapboard1,.flapboard2{
+    position: absolute;
+    background: black;
+    background: rgb(194, 150, 92);
+    width: 31%;
+    height: 50%;
+    top: 86%; left: -30%; transform: skewY(-45deg) skewX(16deg) perspective(6px)  rotateY(5deg) rotateZ(-25deg) scale(0.3);
+}
+.flapboard2{
+    top: 92%;
+    left: -50%;
+}
+.flapboard3, .flapboard4{
+    position: absolute;
+    background-color: rgb(190, 118, 35);
+    top: 106.5%;
+    left: 80%;
+    transform: skewY(21deg);
+        height: 10%;
+        width: 55%;
+        left: 0%;
+    opacity: 0;
+
+    border-top-right-radius: 1rem;
+    z-index:4;
+}
+.flapboard4{
+    left: 50%;
+    top: 109%;
+    transform: skewY(5deg) rotateY(180deg);
+    background: grey;
+    width: 30%; height: 2%;
+    border-top-left-radius: 1rem;
+    z-index: -2;
+    opacity: 1;
+}
+.wall{
+    position: absolute;
+    width: 93%; height: 5%;
+    background-color: rgb(194, 150, 92);
+    top: 110%;
+    left: 100%;
+    transform: skewY(21deg);
+    border-top-right-radius: 1rem;
+    opacity: 0;
+}
+.dive{
+    display: inline;
+    float: left;
+    position: relative;
+    top: 5rem;
+    width: 46%;
+    margin-left: 2.5%;
+    text-align: center;
+    height: 2rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    background: beige;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: Segoe UI;
+}
+.pitch, .res{
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: thin;
+    outline: none;
+    cursor: pointer;
+    box-shadow: grey 5px 5px 10px;
+    background-color: greenyellow;
+    font-size: 1.1rem;
+}
+.res{
+    display: none;
+}
+
+.pitch:active, .res:active{
+    transform: translateY(4px);
+    box-shadow: grey 5px 3px 2px;
+}
+
+.cube,.cubeTwo{
+    width: 3.75rem;
+    height: 3.75rem;
+    position: relative;
+    top: 50%;
+    left: 10%;
+    transform-style: preserve-3d;
+    transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(20deg) rotateY(0deg);
+    float: left;
+    
+}
+.spin{
+    animation: spin 5s linear 0s infinite forwards;
+}
+
+.cubeTwo{
+    transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(20deg) rotateY(60deg);
+    left: 15%;
+    animation: spin2 5s linear 0s infinite forwards;
+}
+.throw{
+    animation: roll_a 4.5s linear 0s 1 forwards;
+}
+.throwTwo{
+    animation: roll_b 4.9s linear 0s 1 forwards;
+}
+.twill{
+    animation: twillDie 3s infinite linear 0s normal forwards; 
+}
+@keyframes twillDie{
+    50%{
+        transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(20deg) rotateY(120deg);
+    }
+    100%{
+        transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(20deg) rotateY(-290deg);
+    }
+}
+
+.side{
+    width: 100%;
+    height: 100%;
+    top: 0; left:0;
+    position: absolute;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 2;
+    background: black;
+    color: white;
+}
+.one{
+    transform: translateZ(30px);
+}
+.six{
+    transform: translateZ(-30px) rotateZ(180deg) rotateY(180deg);
+}
+.two{
+    transform: translateY(30px) rotateX(-90deg);
+}
+.five{
+    transform: translateY(-30px) rotateX(-90deg) rotateY(180deg);
+}
+.three{
+    transform: translateX(-30px) rotateX(-90deg) rotateY(-90deg);
+}
+.four{
+    transform: translateX(30px) rotateX(-90deg) rotateY(90deg);
+}
+
+@keyframes spin{
+    100%{
+        transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(380deg) rotateY(0deg);
+    }
+}
+
+@keyframes roll_a{
+    0%{
+        transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(20deg) rotateY(0deg);
+    }
+    20%{
+        transform: scale(0.2) translateY(-29rem) translateX(-5rem) rotateX(-90deg) rotateZ(20deg) rotateY(-2deg);
+    }
+    25%{
+        transform: scale(0.23) translateY(-27rem) translateX(-6rem) rotateX(-600deg) rotateZ(-20deg) rotateY(20deg);
+        
+    }
+    38%{
+        transform: scale(0.3) translateY(-9rem) translateX(-10rem) rotateX(300deg) rotateZ(37deg) rotateY(0deg);
+    }
+
+    50%{
+        transform: scale(0.3) translateY(9rem) translateX(-18rem) rotateX(1080deg) rotateZ(50deg) rotateY(20deg);
+    }
+    53%{
+        transform: scale(0.29) translateY(11rem) translateX(-16rem) rotateX(1080deg) rotateZ(260deg) rotateY(250deg);
+    }
+    55%{
+        transform: scale(0.3) translateY(12rem) translateX(-12rem) rotateX(1080deg) rotateZ(300deg) rotateY(290deg);
+    }
+    63%{
+        transform: scale(0.3) translateY(16rem) translateX(-6rem) rotateX(1080deg) rotateZ(550deg) rotateY(490deg);
+    }
+    65%{
+        transform: scale(0.33) translateY(17rem) translateX(-6rem) rotateX(180deg) rotateZ(510deg) rotateY(490deg);
+    }
+
+/*alternate version if bounce is desired-->*/ 
+/*replace 50-65%*/
+
+/* 50%{
+        transform: scale(0.3) translateY(9rem) translateX(-18rem) rotateX(200deg) rotateZ(0deg) rotateY(0deg);
+    }
+    53%{
+        transform: scale(0.29) translateY(7rem) translateX(-16rem) rotateX(0deg) rotateZ(200deg) rotateY(0deg);
+    }
+    55%{
+        transform: scale(0.3) translateY(7rem) translateX(-12rem) rotateX(180deg) rotateZ(0deg) rotateY(0deg);
+    }
+    60%{
+        transform: scale(0.3) translateY(14rem) translateX(-7rem) rotateX(0deg) rotateZ(200deg) rotateY(0deg);
+    }
+    65%{
+        transform: scale(0.3) translateY(19rem) translateX(-5rem) rotateX(-400deg) rotateZ(0deg) rotateY(0deg);
+    } */
+
+/*do not alter from 70% !!!*/
+    70%{
+        transform: scale(0.4) translateY(18rem) translateX(-8rem) rotateX(200deg) rotateZ(37deg) rotateY(0deg);
+        z-index: 3;
+    }
+    75%{
+        transform: scale(0.4) translateY(14rem) translateX(-8rem) rotateX(-390deg) rotateZ(20deg) rotateY(-10deg);
+        z-index: 4;
+    }
+    88%{
+        transform: scale(0.7) translateY(22rem) translateX(-4rem) rotateX(-1070deg) rotateZ(104deg) rotateY(-5deg);
+    }
+    89%{
+        transform: scale(0.7) translateY(25rem) translateX(-3rem) rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: scale(1) translateY(29rem) translateX(-8rem) rotateX(-1225deg) rotateZ(504deg) rotateY(-5deg);
+    }
+    
+}
+@keyframes roll_b{
+    0%{
+        transform: scale(0.7) translateX(0rem) translateY(0rem) rotateX(60deg) rotateZ(0deg) rotateY(0deg);
+    }
+    15%{
+        transform: scale(0.2) translateY(-40rem) translateX(2rem) rotateX(-260deg) rotateZ(0deg) rotateY(0deg);
+    }
+    20%{
+        transform: scale(0.2) translateY(-25rem) translateX(2rem) rotateX(0deg) rotateZ(-360deg) rotateY(-720deg);
+        
+    }
+    30%{
+        transform: scale(0.2) translateY(15rem) translateX(24rem) rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    }
+    35%{
+        transform: scale(0.25) translateY(27rem) translateX(6rem) rotateX(0deg) rotateZ(-3600deg) rotateY(720deg);
+    }
+    36%{
+        transform: scale(0.25) translateY(25rem) translateX(6.2rem) rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    }
+    /*first impact*/
+    44%{
+        transform: scale(0.25) translateY(9rem) translateX(6rem) rotateX(-500deg) rotateZ(0deg) rotateY(72deg);
+    }
+    46.9%{
+        transform: scale(0.25) translateY(12rem) translateX(5rem) rotateX(0deg) rotateZ(0deg) rotateY(144deg);
+    }
+/*first downward rebound*/
+    47%{
+        transform: scale(0.25) translateY(12rem) translateX(5rem) rotateX(500deg) rotateZ(0deg) rotateY(216deg);
+        z-index: 1;
+    }
+    55%{
+        transform: scale(0.4) translateY(20rem) translateX(1rem) rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+        z-index: 3;
+    }
+    /* 2nd impact */
+    62%{
+        transform: scale(0.4) translateY(16rem) translateX(0rem) rotateX(-500deg) rotateZ(0deg) rotateY(72deg);
+        z-index: 3;
+    }
+    64.9%{
+        transform: scale(0.43) translateY(21rem) translateX(0rem) rotateX(0deg) rotateZ(0deg) rotateY(144deg);
+        
+    }
+/*2nd downward rebound*/
+    65%{
+        transform: scale(0.43) translateY(21rem) translateX(0rem) rotateX(360deg) rotateZ(0deg) rotateY(144deg);
+    }
+    69.9%{
+        transform: scale(0.45) translateY(24rem) translateX(-2rem) rotateX(0deg) rotateZ(0deg) rotateY(216deg);
+    }
+    /*prepped for roll*/
+    70%{
+        transform: scale(0.45) translateY(22rem) translateX(-2rem) rotateX(0deg) rotateZ(0deg) rotateY(216deg);
+    }
+    /*begin roll*/
+    87.5%{
+        transform: scale(1) translateY(23.7rem) translateX(-6.5rem) rotateX(-1070deg) rotateZ(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: scale(1) translateY(30rem) translateX(0rem) rotateX(-1225deg) rotateZ(710deg) rotateY(2deg);
+    }
+}
