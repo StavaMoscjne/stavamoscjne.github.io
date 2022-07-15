@@ -226,7 +226,7 @@ var g =document.querySelector('.g');
 var tubG =document.querySelector('.ihaisi');
 
 var swoon =document.querySelector('.swoon'); //Kart
-swoon.addEventListener('click',function(){window.location.replace('./Karteikartchen.html')});
+swoon.addEventListener('click',function(){window.location.replace('./inProgress.html')});
 var sweft =document.querySelector('.sweft'); //Halfth
 sweft.addEventListener('click',function(){window.location.replace('./inProgress.html')});
 var swight =document.querySelector('.swight'); //Mlthe
