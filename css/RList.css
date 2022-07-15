@@ -881,8 +881,9 @@ display: block;
         background-position-x: 1.5rem;
 }
 #top{
-        padding: 0.2rem; margin-bottom: 0.4rem; background: none;
+        padding: 0.5rem; margin-bottom: 0.4rem; background: none; outline: none; 
 }
+#top a{text-decoration: none;}
 .imgHolder{
         position: relative;
         top: 0.5rem;
@@ -911,6 +912,8 @@ display: block;
         border-radius: inherit;
         padding: 0.4rem;
         margin: auto;
+        text-underline-offset: 1rem;
+        background: none;
 }
 
 @keyframes theNote {
@@ -1070,3 +1073,47 @@ display: none;
         z-index: 12;
         margin-bottom: 0.5rem;
 }
+
+/*about and credits buttons*/
+.descript_1, .descript_2{
+        width: 3.5rem; height: 1.9rem;
+    }
+    .descript_1{
+        margin-bottom: 3px;
+        border-top-left-radius: 75%;
+        border-top-right-radius: 160%;
+        border-bottom-left-radius: 140%;
+        border-bottom-right-radius: 22%;
+        background: radial-gradient(green, yellow 20%, yellowgreen 50%, green);
+        transform: rotateZ(-20deg);
+        color: black;
+    }
+    .descript_2{
+        margin-left: 15vw;
+        border-bottom-right-radius: 75%;
+        border-bottom-left-radius: 160%;
+        border-top-right-radius: 140%;
+        border-top-left-radius: 0;
+        background: radial-gradient(yellowgreen, orangered 2%, green);
+        transform: rotateZ(-5deg) translateY(-5px);
+        color: white;
+    }
+    .descA{
+        transform: rotateZ(15deg) skewX(5deg);
+        font-size: 0.8rem; font-family: 'faemoot_orn'; font-weight: bold;
+        padding-top: 5px;
+        padding-left: 9px; letter-spacing: 0.7px;
+    }
+    .descB{
+        transform: rotateZ(15deg) skewX(5deg);
+        font-size: 0.7rem; font-family: 'faemoot_orn'; font-weight: bold;
+        padding-bottom: 5px;
+        padding-right: 9px; letter-spacing: 0.7px;
+    }
+    /*home button*/
+    .descript_home{
+        padding: 0.5rem;
+        margin-left: 1.5rem;
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+    }
