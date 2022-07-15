@@ -197,14 +197,99 @@ function prep(){
     }
 }
 
+var msgPanel = document.getElementsByClassName('theMsgPanel')[0];
+var topDrawerPanel = document.getElementsByClassName('topDrawerPanel')[0];
+var rRem = document.querySelector('.rRem');
+var rTop = document.querySelector('.rTop');
+var rOdd = document.querySelector('.rOdd');
+var collect = document.querySelector('#collect');
+var closeDrawer = document.querySelector('#closeDrawer');
+
+var drawer =document.querySelector('.drawer');
+var interests =document.querySelector('.interests');
+
+var bann = document.querySelector('.subBannerLie');
+
+var a =document.querySelector('.a');//gangster
+a.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var b =document.querySelector('.b');//wisdom
+b.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var c =document.querySelector('.c');//highFive
+c.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var d =document.querySelector('.d');//DIAR
+d.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var e =document.querySelector('.e');//tableShaker
+e.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var f =document.querySelector('.f');//awffsome
+f.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var g =document.querySelector('.g');
+var tubG =document.querySelector('.ihaisi');
+
+var swoon =document.querySelector('.swoon'); //Kart
+swoon.addEventListener('click',function(){window.location.replace('./Karteikartchen.html')});
+var sweft =document.querySelector('.sweft'); //Halfth
+sweft.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var swight =document.querySelector('.swight'); //Mlthe
+swight.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+var swup =document.querySelector('.swup'); //Alay
+swup.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+
+reminderOf =()=> msgPanel.classList.add('active');
+rRem.addEventListener("click",reminderOf);
+reminderDone =()=> msgPanel.classList.remove('active');
+collect.addEventListener("click",reminderDone);
+drawerOpen =()=> topDrawerPanel.classList.add('drawerActive');
+
+rTop.addEventListener("click",topList);
+rOdd.addEventListener("click",oddList);
+g.addEventListener("click",tubList);
+
+//panel aura as background
+    function tubList(){
+        drawerOpen();
+        topDrawerPanel.classList.add('topPanelAura');
+        drawer.style.display=interests.style.display='none';
+        tubG.style.display='block';
+        g.onclick=removeEventListener('click',tubList);
+        bann.innerHTML='I Have a Tub I Soak In';
+    }
+    
+    function topList(){
+        drawerOpen();
+        topDrawerPanel.classList.add('topPanelAura2');
+        tubG.style.display=interests.style.display='none';
+        drawer.style.display='block';
+        bann.innerHTML='Top Drawer &#128076; ';
+    }
+    function oddList(){
+        drawerOpen();
+        topDrawerPanel.classList.add('topPanelAura3');
+        drawer.style.display=tubG.style.display='none';
+        interests.style.display="block";
+        bann.innerHTML='Miscellaneous Amusements';
+    }
+drawerClosed =()=> {
+    topDrawerPanel.classList.add('drawerPassive');
+    reset=()=>{
+        topDrawerPanel.classList.remove('drawerPassive');
+        topDrawerPanel.classList.remove('drawerActive');
+        topDrawerPanel.classList.remove('topPanelAura');
+        topDrawerPanel.classList.remove('topPanelAura2');
+        topDrawerPanel.classList.remove('topPanelAura3');
+    }
+    setTimeout(reset, 1000);
+}
+closeDrawer.addEventListener("click",drawerClosed);
+
 //home about and credits
+var hom = document.querySelector('.descript_home');
 var abou = document.querySelector('.descript_1');
 var cred = document.querySelector('.descript_2');
 function home(){window.location.replace("../index.html")};
 function about(){window.location.replace("./about.html")};
 function credits(){window.location.replace("./credits.html")};
-descHome.addEventListener('click',home);
 abou.addEventListener('click',about);
+hom.addEventListener('click',home);
 cred.addEventListener('click',credits);
 
 //username concerns
