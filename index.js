@@ -23,6 +23,9 @@ setTimeout(oldState,9972);
     var cape = document.querySelector('.cape');
     var dialogOne = document.getElementsByClassName('dialog')[0];
     var dialogTwo = document.getElementsByClassName('dialog')[1];
+    
+
+
 
 descriptorActive = ()=>{
     descriptor.style.transition='0.9s';
@@ -72,9 +75,10 @@ setPref =(a)=> {
     return
 }
 clearPref =()=> {
-    localStorage.setItem('setPreference','unset'); 
-    localStorage.setItem('playState','false');
-    localStorage.setItem('tour','true');
+    // localStorage.setItem('setPreference','unset'); 
+    // localStorage.setItem('playState','false');
+    // localStorage.setItem('tour','true');
+    localStorage.clear();
     location.reload();
 }
 
@@ -391,6 +395,88 @@ belle =()=>{
     vitaStyle('--four');
 }
 belleTheme.addEventListener("click",belle);
+
+//userName concerns
+var userName = document.querySelector('#userName');
+var userSubButton = document.querySelector('.userSubmit');
+var userCancelButton = document.querySelector('.userCancel');
+function nameUser(){
+    var nameText = (((userName.value.slice(0,13)).slice(0,1)).toUpperCase())+(userName.value.slice(1,13)).toLowerCase();
+    zeta.innerHTML="It's "+ nameText +"'s Favourite Pages<i>!</i>";
+    var emoji = String.fromCodePoint(0x1F609);
+    
+    if (nameText.length>13){
+        alert("Your username cannot be more than 12 characters long. Well, actually it could... yeah. But it throws off the Sidemenu design in numerous horrible ways you can't begin to imagine, so...");
+    }
+    if (nameText.length<2){
+        alert('Your username should not be less than 2 characters long');
+        zeta.innerHTML = "It's Situe Ser's favourit Paeges";
+    }
+    else if(nameText=='Stavamoscjne'){
+        alert('That Username is reserved '+ emoji);
+        zeta.innerHTML = "It's Imposter's favourite pages";
+        localStorage.setItem('userN','unset');
+    }
+    else if(nameText=='Stava'){
+        alert('That Username is reserved '+ emoji);
+        zeta.innerHTML = "It's some other dude's favourite pages";
+        localStorage.setItem('userN','unset');
+    }
+    else if(nameText=='Moscjne'){
+        alert('That Username is reserved '+ emoji);
+        zeta.innerHTML = "It's Imposter's favourite pages";
+        localStorage.setItem('userN','unset');
+    }
+    else if(nameText=='Stava moscjne'){
+        alert('That Username is reserved '+ emoji);
+        zeta.innerHTML = "It's Imposter's favourite pages";
+        localStorage.setItem('userN','unset');
+    }
+    else if(nameText=='Stavamosjcne'){
+        alert('bad request: reload');
+        zeta.innerHTML = "It's 'Can't spell to save their own life's' pages";
+        localStorage.setItem('userN','unset');
+    }
+    else if(nameText=='Stavamojscne'){
+        alert('bad request: reload');
+        zeta.innerHTML = "It's 'Can't spell to save their own life's' pages";
+        localStorage.setItem('userN','unset');
+    }
+    else if(nameText=='Stavamojcsne'){
+        alert('bad request: reload');
+        zeta.innerHTML = "It's 'Can't spell to save their own life's' pages";
+        localStorage.setItem('userN','unset');
+    }
+    else{
+    localStorage.setItem('userN','set');
+    localStorage.setItem('user', JSON.stringify(nameText));
+    }
+    }
+userSubButton.addEventListener('click',nameUser);
+var fixed = localStorage.getItem('userN');
+
+function fixName(){
+    var userFixed = JSON.parse(localStorage.getItem('user'));
+    switch (fixed) {
+        case 'set':
+            zeta.innerHTML="It's "+ userFixed +"'s Favourite Pages<i>!</i>";
+            break;
+        default:
+            console.log('userName.value');
+            break;
+    }
+}
+fixName();
+var userDialogBox = document.querySelector('.userDialog');
+var changeUserNameBtn = document.querySelector('.userNameBtn');
+changeUserNameBtn.addEventListener('click',function(){
+    userDialogBox.classList.add('userDialogEnabled');
+    userSubButton.style.display='block';
+});
+userCancelButton.addEventListener('click',function(){
+    userDialogBox.classList.remove('userDialogEnabled');
+})
+//end of username concerns
 
 // the Clix button concerns
 function prep(){

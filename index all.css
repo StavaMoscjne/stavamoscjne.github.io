@@ -721,6 +721,8 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         border-radius: 50%;
         width: 2.3rem;
         border-style: outset;
+        position: relative;
+        left: 75%;
     }
     .TBB:active{
         border-style: groove;
@@ -744,7 +746,21 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
         opacity: 0;
         z-index: -9;
     }
-
+    .userNameBtn{
+        background: goldenrod;
+        margin-bottom: 0.3rem;
+        padding: 0.3rem;
+        font-family: faemoot_orn;
+        border-radius: 0.5rem;
+        line-height: 1.3;
+        border: 4px;
+        border-color: var(--overlapPane);
+        border-style: outset;
+    }
+    .userNameBtn:active{
+        transform: translateY(4px);
+    }
+    
     /*QuiClix Button concerns*/
     /* the transformable clicker*/
     .quiClixBox{
@@ -1050,7 +1066,7 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     font-family: 'cicle';
     src: url("./fonts/cicle_fina-webfont.woff");
 }
-    .dialog{
+    .dialog, .userDialog{
     position: absolute;
     top: 5vw;
     left: 39vw; 
@@ -1063,10 +1079,42 @@ body::-webkit-scrollbar, body::-moz-scrollbar{
     color: white;
     font-size: 0.9rem;
     box-sizing: content-box;
+}
+    .dialog{
+    z-index: -10;
+    opacity: 0;
+}
+.userDialog{
+    top: 0;
+    left: 45vw; 
+    width: 45vw;
+    height: 35vw;
     z-index: -10;
     opacity: 0;
 }
 
+.userDialogEnabled{
+    top: 3vw;
+    z-index: 7;
+    opacity: 1;
+    transition: 0.1s;
+}
+#userName{
+    height: 2rem;
+    width: 10.5rem;
+}
+.userSubmit, .userCancel{
+    width: 4rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    margin-top: 0.4rem;
+    float: left;
+}
+.userSubmit{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: greenyellow;
+}
 .diagActive{
 animation: dialog 0.6s ease 0s 1 forwards normal;
 }
@@ -1242,7 +1290,7 @@ animation: dialog 0.6s ease 0s 1 forwards normal;
         animation: nextBtnSlide 1.4s linear 0s 1 forwards normal;
     }
     .nextLegible{
-        background: green;
+        background: red;
         color: white;
     }
 

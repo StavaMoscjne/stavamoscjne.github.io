@@ -93,6 +93,7 @@
     </div>
     <div class="sunflap"></div>
     <div class="sidebell">
+        <div class="userNameBtn">Change User Name</div>
         <button class="TBB" id="TBRB" href='#'> RB </button><br>        
         <button class="TBB" id="TBGB" href='#'> List </button>    
         <button class="TBB" id="TBYB" href='#'> sTMj </button>
@@ -110,6 +111,16 @@
             <span class="pro">Proceed?</span><br></p>
         <br>
         <button class="dialogBtn"id="yLR"> Yes </button><button class="dialogBtn" id="nLR">No</button>
+    </div>
+    
+    <div class="userDialog">
+        <form id="userForm">
+            <label for="userName">Type name here:</label><br><br>
+            <input type='text' id='userName' value='Site User'>
+            <p><br>You can change it anytime !</p>
+            <button class='userSubmit' type="submit">Change</button>
+            <button class ='userCancel' type="button"> Back </button>
+        </form>
     </div>
 
     <div id="sheen"></div>
@@ -165,9 +176,11 @@
         }
         </style>
     </noscript>
+
     <div class="desktopModeDialog"> 
         <br><br>Well here you go: <button id="squint"> HERE </button><br><br> 
     </div>
+    
     <script src='./res.js'></script>
     <script src="./index.js"></script>
 </body>

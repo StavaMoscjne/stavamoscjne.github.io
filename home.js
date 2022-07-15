@@ -1,6 +1,9 @@
 oldState=()=>localStorage.setItem('playState','true');
 setTimeout(oldState,9972);
 
+// window.addEventListener('keypress',(event)=>{console.log(event)});
+// window.dispatchEvent(new KeyboardEvent('keypress',{'key':'z'}));
+
 styleReadyStateVW = () => {endSecureVW.style.zIndex="1"};
     var styleIdeVW = document.querySelector("#styleTapVW");
     var styleTapWrapVW = document.querySelector('.styleTapWrapVW');
