@@ -14,7 +14,7 @@ body{
     position: relative;
     width: 15rem;
     height: 20rem;
-    background: yellowgreen;
+    background: none;
     margin: auto;
     top:5rem;
     transform: scale(1.3);
