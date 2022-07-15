@@ -70,7 +70,7 @@
 #notifier:after{
     font-family: 'faemoot_orn';
     color: yellow;
-    content:'If you are getting this message while using a computer, maximise your browser window and refresh the page... Possible fixes, if on mobile, include rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height. :-)';
+    content:'You may ignore this prompt if trying to change your user name on mobile. The virtual keyboard has taken up some screen real estate, a minor inconvenience. Type in the name and click "Change". Everything should proceed as normal... :-) If you are getting this message while using a computer, maximise your browser window and refresh the page... Possible fixes, if on mobile, include rotating your phone if on landscape mode, or using a device with a browser resolution of not less than 360 pixel width and 640 pixels height. :-)';
 }
 
     .desktopModeDialog{
