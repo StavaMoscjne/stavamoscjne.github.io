@@ -938,7 +938,7 @@ display: block;
 }
 
 /* the top drawer concerns*/
-.topDrawerPanel{
+.topDrawerPanel, .topDrawerPanel_A{
         position: relative;
         top: 0.5rem;
         width: 22rem;
@@ -948,6 +948,11 @@ display: block;
         border-radius: 0.5rem;
         display: none;
         overflow-y: scroll;
+}
+.topDrawerPanel_A{
+        position: absolute;
+        top: 4.3rem;
+        background: none;
 }
 .topPanelAura{
         background-image: url('../pics/theory/rings.jpeg');
@@ -965,6 +970,10 @@ display: block;
         display: block;
         animation: topDrawer 1s ease-in-out 0s 1 forwards normal;
 }
+.drawerActive_A{
+        display: block;
+        animation: topDrawer_A 1.2s ease-in 0s 1 forwards normal;
+}
 .drawerPassive{
         animation: drawerClosed 0.5s ease-in-out 0s 1 forwards normal;
 }
@@ -973,6 +982,23 @@ display: block;
 100%{
         left: 0;
         margin: auto;
+}}
+@keyframes topDrawer_A{
+5%{
+        transform: rotateZ(-16deg);
+}
+50%{
+        transform: rotateZ(-16deg);
+}
+
+85%{
+        transform: rotateZ(12deg);
+}
+95%{
+        transform: rotateZ(-8deg);
+}
+100%{
+        left: 0;
 }
 }
 @keyframes drawerClosed{
@@ -1042,7 +1068,7 @@ display: none;
 #tTOL, #andOthers{
         margin-top: 18rem;
 }
-.subBannerLie{
+.subBannerLie, .subBannerLie_A{
         position: absolute;
         height: 3rem;
         width: 75%; height: 101%;
@@ -1057,7 +1083,7 @@ display: none;
         font-family: cicle_fina;
         border-bottom-right-radius: 2rem;
 }
-#closeDrawer{
+#closeDrawer, #closeDrawer_A{
         position:relative;
         width: 3rem; height: 2.1rem;
         margin-bottom: 0.5rem;
@@ -1067,7 +1093,7 @@ display: none;
         border-radius: 15px;
         background: rgb(79, 170, 255);
 }
-.closeDrawer{
+.closeDrawer, .closeDrawer_A{
         position: sticky;
         top: 0;
         z-index: 12;
