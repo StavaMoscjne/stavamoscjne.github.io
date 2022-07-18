@@ -199,16 +199,19 @@ function prep(){
 
 var msgPanel = document.getElementsByClassName('theMsgPanel')[0];
 var topDrawerPanel = document.getElementsByClassName('topDrawerPanel')[0];
+var topDrawerPanel_A = document.getElementsByClassName('topDrawerPanel_A')[0];
 var rRem = document.querySelector('.rRem');
 var rTop = document.querySelector('.rTop');
 var rOdd = document.querySelector('.rOdd');
 var collect = document.querySelector('#collect');
 var closeDrawer = document.querySelector('#closeDrawer');
+var closeDrawer_A = document.querySelector('#closeDrawer_A');
 
 var drawer =document.querySelector('.drawer');
 var interests =document.querySelector('.interests');
 
 var bann = document.querySelector('.subBannerLie');
+var bann_A = document.querySelector('.subBannerLie_A');
 
 var a =document.querySelector('.a');//gangster
 a.addEventListener('click',function(){window.location.replace('./inProgress.html')});
@@ -226,7 +229,7 @@ var g =document.querySelector('.g');
 var tubG =document.querySelector('.ihaisi');
 
 var swoon =document.querySelector('.swoon'); //Kart
-swoon.addEventListener('click',function(){window.location.replace('./inProgress.html')});
+swoon.addEventListener('click',function(){window.location.replace('./Karteikartchen.html')});
 var sweft =document.querySelector('.sweft'); //Halfth
 sweft.addEventListener('click',function(){window.location.replace('./inProgress.html')});
 var swight =document.querySelector('.swight'); //Mlthe
@@ -238,9 +241,10 @@ reminderOf =()=> msgPanel.classList.add('active');
 rRem.addEventListener("click",reminderOf);
 reminderDone =()=> msgPanel.classList.remove('active');
 collect.addEventListener("click",reminderDone);
-drawerOpen =()=> topDrawerPanel.classList.add('drawerActive');
+function drawerOpen (){topDrawerPanel.classList.add('drawerActive')};
+function drawerOpen_A (){topDrawerPanel_A.classList.add('drawerActive_A')};
 
-rTop.addEventListener("click",topList);
+rTop.onclick = topList;
 rOdd.addEventListener("click",oddList);
 g.addEventListener("click",tubList);
 
@@ -248,38 +252,46 @@ g.addEventListener("click",tubList);
     function tubList(){
         drawerOpen();
         topDrawerPanel.classList.add('topPanelAura');
-        drawer.style.display=interests.style.display='none';
+        interests.style.display='none';
         tubG.style.display='block';
         g.onclick=removeEventListener('click',tubList);
         bann.innerHTML='I Have a Tub I Soak In';
     }
-    
-    function topList(){
-        drawerOpen();
-        topDrawerPanel.classList.add('topPanelAura2');
-        tubG.style.display=interests.style.display='none';
-        drawer.style.display='block';
-        bann.innerHTML='Top Drawer &#128076; ';
-    }
+
     function oddList(){
         drawerOpen();
         topDrawerPanel.classList.add('topPanelAura3');
-        drawer.style.display=tubG.style.display='none';
+        tubG.style.display='none';
         interests.style.display="block";
         bann.innerHTML='Miscellaneous Amusements';
     }
+    function topList(){
+        drawerOpen_A();
+        topDrawerPanel_A.classList.add('topPanelAura2');
+        bann_A.innerHTML='Top Drawer &#128076; ';
+    }
+
 drawerClosed =()=> {
     topDrawerPanel.classList.add('drawerPassive');
     reset=()=>{
         topDrawerPanel.classList.remove('drawerPassive');
         topDrawerPanel.classList.remove('drawerActive');
         topDrawerPanel.classList.remove('topPanelAura');
-        topDrawerPanel.classList.remove('topPanelAura2');
         topDrawerPanel.classList.remove('topPanelAura3');
     }
     setTimeout(reset, 1000);
 }
+drawerClosed_A =()=> {
+    topDrawerPanel_A.classList.add('drawerPassive');
+    reset_A=()=>{
+        topDrawerPanel_A.classList.remove('drawerPassive');
+        topDrawerPanel_A.classList.remove('drawerActive_A');
+        topDrawerPanel_A.classList.remove('topPanelAura2');
+    }
+    setTimeout(reset_A, 1000);
+}
 closeDrawer.addEventListener("click",drawerClosed);
+closeDrawer_A.addEventListener("click",drawerClosed_A);
 
 //home about and credits
 var hom = document.querySelector('.descript_home');
