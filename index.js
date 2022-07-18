@@ -405,7 +405,7 @@ function nameUser(){
     zeta.innerHTML="It's "+ nameText +"'s Favourite Pages<i>!</i>";
     var emoji = String.fromCodePoint(0x1F609);
     
-    if (nameText.length>13){
+    if (nameText.length>12){
         alert("Your username cannot be more than 12 characters long. Well, actually it could... yeah. But it throws off the Sidemenu design in numerous horrible ways you can't begin to imagine, so...");
     }
     if (nameText.length<2){
