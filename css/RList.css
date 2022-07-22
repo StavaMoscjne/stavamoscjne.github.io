@@ -938,7 +938,7 @@ display: block;
 }
 
 /* the top drawer concerns*/
-.topDrawerPanel, .topDrawerPanel_A{
+.realLifeStuffPanel{
         position: relative;
         top: 0.5rem;
         width: 22rem;
@@ -949,11 +949,7 @@ display: block;
         display: none;
         overflow-y: scroll;
 }
-.topDrawerPanel_A{
-        position: absolute;
-        top: 4.3rem;
-        background: none;
-}
+
 .topPanelAura{
         background-image: url('../pics/theory/rings.jpeg');
 }
@@ -970,10 +966,7 @@ display: block;
         display: block;
         animation: topDrawer 1s ease-in-out 0s 1 forwards normal;
 }
-.drawerActive_A{
-        display: block;
-        animation: topDrawer_A 1.2s ease-in 0s 1 forwards normal;
-}
+
 .drawerPassive{
         animation: drawerClosed 0.5s ease-in-out 0s 1 forwards normal;
 }
@@ -983,24 +976,7 @@ display: block;
         left: 0;
         margin: auto;
 }}
-@keyframes topDrawer_A{
-5%{
-        transform: rotateZ(-16deg);
-}
-50%{
-        transform: rotateZ(-16deg);
-}
 
-85%{
-        transform: rotateZ(12deg);
-}
-95%{
-        transform: rotateZ(-8deg);
-}
-100%{
-        left: 0;
-}
-}
 @keyframes drawerClosed{
 0%{
         top: 0.5rem;
@@ -1036,13 +1012,6 @@ display: block;
         width: 100%;
 }
 
-/* .drawer, .interests{
-display: none;
-} */
-
-/* .interestsBox{
-        background: yellow;
-} */
 .pictureBox{
         width: 95px;
         height: 75px;
@@ -1059,16 +1028,16 @@ display: none;
 .captionBox{
         line-height: 3;
 }
-#tTOC, #opPiece{
+#tTOC{
         margin-top: 6rem;
 }
-#tTOA, #creations, #calc{
+#tTOA, #calc{
         margin-top: 12rem;
 }
-#tTOL, #andOthers{
+#tTOL{
         margin-top: 18rem;
 }
-.subBannerLie, .subBannerLie_A{
+.subBannerLie{
         position: absolute;
         height: 3rem;
         width: 75%; height: 101%;
@@ -1083,7 +1052,7 @@ display: none;
         font-family: cicle_fina;
         border-bottom-right-radius: 2rem;
 }
-#closeDrawer, #closeDrawer_A{
+#closeDrawer{
         position:relative;
         width: 3rem; height: 2.1rem;
         margin-bottom: 0.5rem;
@@ -1093,7 +1062,7 @@ display: none;
         border-radius: 15px;
         background: rgb(79, 170, 255);
 }
-.closeDrawer, .closeDrawer_A{
+.closeDrawer{
         position: sticky;
         top: 0;
         z-index: 12;
@@ -1143,3 +1112,78 @@ display: none;
         border-bottom-left-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
     }
+
+/*the top drawer itself*/
+.theTopDrawer{
+        font-family: faemoot_reg;
+        color: goldenrod;
+        text-decoration: none;
+        position: absolute;
+        top: 0;
+        left: 0.5rem;
+        width: 21.5rem;
+        height: 35rem;
+        background: black;
+        text-align: center;
+        background-image: url('../pics/avocado.jpg');
+        background-repeat: no-repeat;
+        background-size: 540%;
+        background-position-x: -3rem;
+        transition: 0.7s;
+}
+.topHide{
+        z-index: -99;
+        opacity: 0;
+}
+
+.theTopDrawer a:link,
+.theTopDrawer a:visited,
+.theTopDrawer a:hover,
+.theTopDrawer a:active{
+        text-decoration: none;
+        color: goldenrod;
+}
+.theDrawerBar{
+        width: 21.5rem;
+        height: 3.5rem;
+        margin-bottom: 0.5rem;
+        /* background: #695656; */
+}
+.theDrawerContents{
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+}
+.captionTopic{
+        width: 10rem;
+        align-self: center;
+}
+.theDrawerCaption{
+        background: rgb(88, 60, 7);
+        height: 2.5rem;
+        font-size: 1.2rem;
+        border-end-start-radius: 1rem;
+        border-end-end-radius: 1rem;
+}
+
+#theDrawerCloseBtn{
+        width: 4rem;
+        height: 1.2rem;
+        padding-bottom: 1rem;
+        background:#7e8000;
+        border: 0px;
+        color: wheat;
+        border-end-start-radius: 0.5rem;
+        border-end-end-radius: 0.5rem;
+}
+
+.iFrame{
+        width: 5.94rem;
+        height: 4.69rem;
+        background: violet;
+}
+.shelf{
+        display: flex;
+        justify-content: space-evenly;
+}
