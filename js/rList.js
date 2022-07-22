@@ -198,20 +198,21 @@ function prep(){
 }
 
 var msgPanel = document.getElementsByClassName('theMsgPanel')[0];
-var topDrawerPanel = document.getElementsByClassName('topDrawerPanel')[0];
-var topDrawerPanel_A = document.getElementsByClassName('topDrawerPanel_A')[0];
+var realLifeStuffPanel = document.getElementsByClassName('realLifeStuffPanel')[0];
+let ace = document.querySelector('.theTopDrawer');
+
 var rRem = document.querySelector('.rRem');
 var rTop = document.querySelector('.rTop');
 var rOdd = document.querySelector('.rOdd');
 var collect = document.querySelector('#collect');
 var closeDrawer = document.querySelector('#closeDrawer');
-var closeDrawer_A = document.querySelector('#closeDrawer_A');
+var drawerCloseBtn = document.querySelector('#theDrawerCloseBtn');
 
 var drawer =document.querySelector('.drawer');
 var interests =document.querySelector('.interests');
 
 var bann = document.querySelector('.subBannerLie');
-var bann_A = document.querySelector('.subBannerLie_A');
+
 
 var a =document.querySelector('.a');//gangster
 a.addEventListener('click',function(){window.location.replace('./inProgress.html')});
@@ -241,17 +242,29 @@ reminderOf =()=> msgPanel.classList.add('active');
 rRem.addEventListener("click",reminderOf);
 reminderDone =()=> msgPanel.classList.remove('active');
 collect.addEventListener("click",reminderDone);
-function drawerOpen (){topDrawerPanel.classList.add('drawerActive')};
-function drawerOpen_A (){topDrawerPanel_A.classList.add('drawerActive_A')};
+function drawerOpen (){realLifeStuffPanel.classList.add('drawerActive')};
 
-rTop.onclick = topList;
+rTop.addEventListener('click', function(){
+    ace.classList.remove('topHide');
+    ace.style.transform = 'translateY(4rem)';
+    ace.style.opacity = '1';
+});
+
+drawerCloseBtn.addEventListener('click', function(){
+    ace.style.opacity = '0';
+    ace.style.transform = 'translateY(0rem)';
+    setTimeout(() => {
+        ace.classList.add('topHide');
+    }, 600);
+});
+
 rOdd.addEventListener("click",oddList);
 g.addEventListener("click",tubList);
 
 //panel aura as background
     function tubList(){
         drawerOpen();
-        topDrawerPanel.classList.add('topPanelAura');
+        realLifeStuffPanel.classList.add('topPanelAura');
         interests.style.display='none';
         tubG.style.display='block';
         g.onclick=removeEventListener('click',tubList);
@@ -260,38 +273,25 @@ g.addEventListener("click",tubList);
 
     function oddList(){
         drawerOpen();
-        topDrawerPanel.classList.add('topPanelAura3');
+        realLifeStuffPanel.classList.add('topPanelAura3');
         tubG.style.display='none';
         interests.style.display="block";
         bann.innerHTML='Miscellaneous Amusements';
     }
-    function topList(){
-        drawerOpen_A();
-        topDrawerPanel_A.classList.add('topPanelAura2');
-        bann_A.innerHTML='Top Drawer &#128076; ';
-    }
-
-drawerClosed =()=> {
-    topDrawerPanel.classList.add('drawerPassive');
-    reset=()=>{
-        topDrawerPanel.classList.remove('drawerPassive');
-        topDrawerPanel.classList.remove('drawerActive');
-        topDrawerPanel.classList.remove('topPanelAura');
-        topDrawerPanel.classList.remove('topPanelAura3');
+    
+    drawerClosed =()=> {
+        realLifeStuffPanel.classList.add('drawerPassive');
+        reset=()=>{
+        realLifeStuffPanel.classList.remove('drawerPassive');
+        realLifeStuffPanel.classList.remove('drawerActive');
+        realLifeStuffPanel.classList.remove('topPanelAura');
+        realLifeStuffPanel.classList.remove('topPanelAura3');
     }
     setTimeout(reset, 1000);
 }
-drawerClosed_A =()=> {
-    topDrawerPanel_A.classList.add('drawerPassive');
-    reset_A=()=>{
-        topDrawerPanel_A.classList.remove('drawerPassive');
-        topDrawerPanel_A.classList.remove('drawerActive_A');
-        topDrawerPanel_A.classList.remove('topPanelAura2');
-    }
-    setTimeout(reset_A, 1000);
-}
+
 closeDrawer.addEventListener("click",drawerClosed);
-closeDrawer_A.addEventListener("click",drawerClosed_A);
+
 
 //home about and credits
 var hom = document.querySelector('.descript_home');
@@ -312,10 +312,12 @@ function fixName(){
         case 'set':
             zeta.innerHTML="It's "+ userFixed +"'s Favourite Pages<i>!</i>";
             break;
-        default:
-            console.log('userName.value');
-            break;
-    }
-}
-fixName();
+            default:
+                console.log('userName.value');
+                break;
+            }
+        }
+        fixName();
+        
 //end of username concerns
+        
